@@ -11,9 +11,15 @@ class HomeContainer extends Component {
       this.findUserById = this.findUserById.bind(this)
     }
 
-    findUserById(id){
-      const url = "http://localhost:8080/api/users"
 
+    findUserById(id){
+      const url = "/api/users/"+id
+      const request = new Request
+      request.get(url)
+      .then(user => this.setState({user: user}))
+      .catch(err => console.error)
+      
+          {/*Test above after db set up*/}
     }
 
     render(){
@@ -25,6 +31,7 @@ class HomeContainer extends Component {
         </div>
       )
     }
+
 }
 
 export default HomeContainer

@@ -5,6 +5,7 @@ class Request {
     .then((res) => res.json());
   }
 
+
 }
 
 export default Request;

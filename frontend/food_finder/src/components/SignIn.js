@@ -5,6 +5,7 @@ const SignIn = (props) => {
 const handleSubmit = (event) =>{
   event.preventDefault()
 
+  {/* Check once DB set up */}
   const id = {
   "id": event.target.id.value
 }
