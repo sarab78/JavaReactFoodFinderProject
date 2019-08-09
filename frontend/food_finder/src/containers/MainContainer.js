@@ -1,9 +1,12 @@
 import React, {Component} from 'react'
 import Request from '../helpers/Request'
+import HomeContainer from './HomeContainer'
 import SignIn from '../components/SignIn'
 import SignUpContainer from './SignUpContainer'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
-class HomeContainer extends Component {
+
+class MainContainer extends Component {
     constructor(props){
       super(props)
       this.state = {
@@ -34,15 +37,16 @@ class HomeContainer extends Component {
       .catch(err => console.error)
     }
 
+
+//Create Router to change bewtween Home screen and sign up screen
+//remove Home screen functionality to main class.
+//enable functions to be called and passed through home then sign up.
     render(){
       return (
-        <div className="home-content">
-          <h1>FoodFinder</h1>
-          <p>All about FoodFinder</p>
-          <SignIn handleSignIn={this.findUserById}/>
-          <button onClick={this.goToCreatePage}>
-            <SignUpContainer handleSignUp={this.createNewUser}/>
-          </button>
+        <div className="main-app">
+         <Router>
+
+         </Router>
 
         </div>
       )
@@ -50,4 +54,4 @@ class HomeContainer extends Component {
 
 }
 
-export default HomeContainer
+export default MainContainer
