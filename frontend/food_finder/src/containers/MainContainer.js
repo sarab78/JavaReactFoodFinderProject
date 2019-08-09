@@ -37,24 +37,25 @@ class MainContainer extends Component {
       .catch(err => console.error)
     }
 
+    viewNew(){
+      window.location = '/new';
+    }
 
-//Create Router to change bewtween Home screen and sign up screen
-//remove Home screen functionality to main class.
-//enable functions to be called and passed through home then sign up.
+
+
     render(){
       return (
         <div className="main-app">
          <Router>
           <Switch>
             <Route exact path="/home"
-            render={() => <HomeContainer user={this.state.user} />}
+            render={() => <HomeContainer findUserByIdMain={this.findUserById} switchToSignUpContainer={this.viewNew}/>}
             />
             <Route exact path="/new"
             render={() => <SignUpContainer signUpMain={this.createNewUser} />}
             />
-          <Switch>
+          </Switch>
          </Router>
-
         </div>
       )
     }
