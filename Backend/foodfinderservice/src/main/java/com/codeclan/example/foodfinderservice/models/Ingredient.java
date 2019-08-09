@@ -13,12 +13,13 @@ public class Ingredient {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "ingredient_id")
-    private String ingredientId;
+    @ManyToOne
+    @JoinColumn(name = "ingredient_id", nullable = false)
+    private Ingredient ingredient;
 
-    public Ingredient(String name, String ingredientId) {
+    public Ingredient(String name,  Ingredient ingredient) {
         this.name = name;
-        this.ingredientId = ingredientId;
+        this.ingredient = ingredient;
     }
 
     public Ingredient() {
@@ -34,11 +35,11 @@ public class Ingredient {
         this.name = name;
     }
 
-    public String getIngredientId() {
-        return ingredientId;
+    public Ingredient getIngredient() {
+        return ingredient;
     }
 
-    public void setIngredientId(String ingredientId) {
-        this.ingredientId = ingredientId;
+    public void setIngredient(Ingredient ingredient) {
+        this.ingredient = ingredient;
     }
 }

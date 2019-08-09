@@ -13,12 +13,18 @@ public class CuisineType {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "cuisineType_id")
-    private  String cuisineTypeId;
 
-    public CuisineType(String name, String cuisineTypeId) {
+
+    @ManyToOne
+    @JoinColumn(name = "cuisineType_id", nullable = false)
+    private  CuisineType cuisineType;
+
+
+
+
+    public CuisineType(String name,  CuisineType cuisineType ) {
         this.name = name;
-        this.cuisineTypeId = cuisineTypeId;
+        this.cuisineType = cuisineType;
     }
 
     public CuisineType() {
@@ -40,11 +46,11 @@ public class CuisineType {
         this.name = name;
     }
 
-    public String getCuisineTypeId() {
-        return cuisineTypeId;
+    public CuisineType getCuisineType() {
+        return cuisineType;
     }
 
-    public void setCuisineTypeId(String cuisineTypeId) {
-        this.cuisineTypeId = cuisineTypeId;
+    public void setCuisineType(CuisineType cuisineType) {
+        this.cuisineType = cuisineType;
     }
 }
