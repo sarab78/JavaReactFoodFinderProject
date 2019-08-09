@@ -32,11 +32,14 @@ class MainContainer extends Component {
     createNewUser(user){
       const url = "/api/users"
       const request = new Request
-      request.post(user)
+      request.post(url, user)
       .then(user => this.setState({user: user}))
       .catch(err => console.error)
+
+        {/* above does not have id, which needs to be returned from db */}
     }
 
+//Button on home to re-direct to create new user
     viewNew(){
       window.location = '/new';
     }
