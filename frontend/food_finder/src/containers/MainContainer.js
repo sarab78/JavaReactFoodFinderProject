@@ -45,7 +45,14 @@ class MainContainer extends Component {
       return (
         <div className="main-app">
          <Router>
-
+          <Switch>
+            <Route exact path="/home"
+            render={() => <HomeContainer user={this.state.user} />}
+            />
+            <Route exact path="/new"
+            render={() => <SignUpContainer signUpMain={this.createNewUser} />}
+            />
+          <Switch>
          </Router>
 
         </div>
