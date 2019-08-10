@@ -1,9 +1,10 @@
 import React from 'react';
 import './App.css';
+import MainContainer from './containers/MainContainer'
 
 function App() {
   return (
-    <h1> Just Compile!!!</h1>
+    <MainContainer />
   );
 }
 
