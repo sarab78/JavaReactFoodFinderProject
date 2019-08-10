@@ -12,6 +12,7 @@ const SignUpForm = (props) => {
     props.handleSignUp(user);
   }
 
+
   return(
     <div>
       <form onSubmit={handleSubmit}>

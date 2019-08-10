@@ -12,6 +12,8 @@ class SignUpContainer extends Component {
       this.props.signUpMain(user);
   }
 
+// Pull ingredients and cuisine from db as list as pass as props to Form 
+
   render(){
     return(
         <div>
