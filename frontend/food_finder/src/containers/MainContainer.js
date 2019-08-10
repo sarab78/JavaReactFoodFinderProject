@@ -16,7 +16,7 @@ class MainContainer extends Component {
       this.state = {
         user: "User",
         recipiesList: [],
-        selectedRecipe: []
+        selectedRecipe: null
       }
       this.findUserById = this.findUserById.bind(this)
       this.createNewUser = this.createNewUser.bind(this)
@@ -48,7 +48,7 @@ class MainContainer extends Component {
       const url = new Urls
       fetch(url.getRecipeById(id))
       .then(res => res.json())
-      .then(recipies => this.setState({selectedRecipe: recipies.meals}))
+      .then(recipies => this.setState({selectedRecipe: recipies.meals[0]}))
       // .then(window.location = '/in/recipe')
       .catch(err => console.log(err));
 

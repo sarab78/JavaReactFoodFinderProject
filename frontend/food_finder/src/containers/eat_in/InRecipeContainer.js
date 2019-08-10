@@ -7,7 +7,7 @@ const InRecipeContainer = (props) => {
   }
 
   return(
-    <h1>{props.selectedRecipe[0].strMeal}</h1>
+    <h1>{props.selectedRecipe.strMeal}</h1>
   )
 
 }
