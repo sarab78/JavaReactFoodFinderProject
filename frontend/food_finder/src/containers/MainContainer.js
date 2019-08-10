@@ -4,6 +4,8 @@ import HomeContainer from './HomeContainer'
 import SignIn from '../components/SignIn'
 import SignUpContainer from './SignUpContainer'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import InOutContainer from './InOutContainer'
+import InContainer from './eat_in/InContainer'
 
 
 class MainContainer extends Component {
@@ -23,6 +25,7 @@ class MainContainer extends Component {
       request.get(url)
       .then(user => this.setState({user: user}))
       .catch(err => console.error)
+      .then(window.location = '/in-out');
 
           {/*Test above after db set up*/}
     }
@@ -35,6 +38,7 @@ class MainContainer extends Component {
       request.post(url, user)
       .then(user => this.setState({user: user}))
       .catch(err => console.error)
+      .then(window.location = '/in-out');
 
         {/* above does not have id, which needs to be returned from db */}
     }
@@ -57,6 +61,16 @@ class MainContainer extends Component {
             <Route exact path="/new"
             render={() => <SignUpContainer signUpMain={this.createNewUser} />}
             />
+                        {/* change above address to have user id */}
+
+            <Route exact path="/in-out"
+            render={() => <InOutContainer user={this.user} />}
+            />
+
+            <Route exact path="/in"
+            render={() => <InContainer user={this.user} />}
+            />
+
           </Switch>
          </Router>
         </div>
