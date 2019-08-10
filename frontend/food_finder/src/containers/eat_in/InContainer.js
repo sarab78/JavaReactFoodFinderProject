@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Urls from '../../helpers/keys/Urls'
 import RecipeList from '../../components/RecipeList'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import InRecipeContainer from './InRecipeContainer'
 
 class InContainer extends Component {
 
@@ -26,14 +28,27 @@ class InContainer extends Component {
     fetch(url.getRecipeById(id))
     .then(res => res.json())
     .then(recipies => this.setState({selectedRecipe: recipies.meals}))
+    // .then(window.location = '/in/recipe')
     .catch(err => console.log(err));
+
   }
 
   render() {
     return (
       <div>
-        <p>TestIn</p>
-        <RecipeList recipiesList={this.state.recipiesList} findSelectedRecipe={this.findSelectedRecipe}/>
+        <Router>
+          <Switch>
+            <Route exact path="/in/recipe"
+              render={() => <InRecipeContainer selectedRecipe={this.state.selectedRecipe} />}
+              />
+            <Route exact path="/in/recipe-list"
+              render={() => <RecipeList recipiesList={this.state.recipiesList} findSelectedRecipe={this.findSelectedRecipe}/>}
+              />
+            </Switch>
+        </Router>
+      <p>TestIn</p>
+
+
       </div>
     );
   }

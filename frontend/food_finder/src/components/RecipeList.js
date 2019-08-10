@@ -3,6 +3,11 @@ import RecipeListItem from './RecipeListItem'
 
 const RecipeList = (props) => {
 
+  if(!props.recipiesList){
+  return "Loading..."
+}
+
+
 const recipies = props.recipiesList.map((recipe, index) => {
 
   return <li key={index}>

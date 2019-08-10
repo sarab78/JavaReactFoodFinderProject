@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 const InOutContainer = (props) => {
 
 
-  const inRoute = '/in'
+  const inRoute = '/in/recipe-list'
   const outRoute = '/out'
 
   return(
