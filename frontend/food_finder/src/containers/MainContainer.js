@@ -4,7 +4,8 @@ import HomeContainer from './HomeContainer'
 import SignIn from '../components/SignIn'
 import SignUpContainer from './SignUpContainer'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import  InOutContainer from './InOutContainer'
+import InOutContainer from './InOutContainer'
+import InContainer from './eat_in/InContainer'
 
 
 class MainContainer extends Component {
@@ -64,6 +65,10 @@ class MainContainer extends Component {
 
             <Route exact path="/in-out"
             render={() => <InOutContainer user={this.user} />}
+            />
+
+            <Route exact path="/in"
+            render={() => <InContainer user={this.user} />}
             />
 
           </Switch>
