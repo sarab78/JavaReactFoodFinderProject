@@ -7,16 +7,29 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import InOutContainer from './InOutContainer'
 import InContainer from './eat_in/InContainer'
 import InRecipeContainer from './eat_in/InRecipeContainer'
+import Urls from '../helpers/keys/Urls'
 
 
 class MainContainer extends Component {
     constructor(props){
       super(props)
       this.state = {
-        user: null,
+        user: "User",
+        recipiesList: [],
+        selectedRecipe: []
       }
       this.findUserById = this.findUserById.bind(this)
       this.createNewUser = this.createNewUser.bind(this)
+      this.getRecipeList = this.getRecipeList.bind(this)
+      this.findSelectedRecipe = this.findSelectedRecipe.bind(this)
+    }
+
+    getRecipeList(){
+      const url = new Urls
+      fetch(url.urlTest())
+      .then(res => res.json())
+      .then(recipies => this.setState({recipiesList: recipies.meals}))
+      .catch(err => console.log(err));
     }
 
 
@@ -29,6 +42,16 @@ class MainContainer extends Component {
       .then(window.location = '/in-out');
 
           {/*Test above after db set up*/}
+    }
+
+    findSelectedRecipe(id) {
+      const url = new Urls
+      fetch(url.getRecipeById(id))
+      .then(res => res.json())
+      .then(recipies => this.setState({selectedRecipe: recipies.meals}))
+      // .then(window.location = '/in/recipe')
+      .catch(err => console.log(err));
+
     }
 
 
@@ -63,13 +86,15 @@ class MainContainer extends Component {
             render={() => <SignUpContainer signUpMain={this.createNewUser} />}
             />
                         {/* change above address to have user id */}
-
             <Route exact path="/in-out"
-            render={() => <InOutContainer user={this.user} />}
+            render={() => <InOutContainer user={this.state.user} getRecipeList={this.getRecipeList}/>}
             />
 
-            <Route  path="/in"
-            render={() => <InContainer user={this.user} />}
+            <Route  exact path="/in"
+            render={() => <InContainer user={this.state.user} recipiesList={this.state.recipiesList} findSelectedRecipe={this.findSelectedRecipe}/>}
+            />
+            <Route exact path="/in/recipe"
+            render={() => <InRecipeContainer user={this.state.user} selectedRecipe={this.state.selectedRecipe}/>}
             />
 
 
