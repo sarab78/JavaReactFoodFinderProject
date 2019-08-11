@@ -1,6 +1,7 @@
 import React from 'react'
 import RecipeIngredients from '../../components/RecipeIngredients'
 import RecipeVideo from '../../components/RecipeVideo'
+import NavBar from '../../NavBar'
 
 const InRecipeContainer = (props) => {
 
@@ -10,6 +11,8 @@ const InRecipeContainer = (props) => {
 
   return(
     <div className="recipe-detials">
+
+    <NavBar />
 
     <div className="recipe-name">
     <h1>{props.selectedRecipe.strMeal}</h1>

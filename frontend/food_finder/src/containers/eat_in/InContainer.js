@@ -3,6 +3,7 @@ import Urls from '../../helpers/keys/Urls'
 import RecipeList from '../../components/RecipeList'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import InRecipeContainer from './InRecipeContainer'
+import NavBar from '../../NavBar'
 
 class InContainer extends Component {
 
@@ -35,7 +36,9 @@ class InContainer extends Component {
 
   render() {
     return (
+
       <div>
+      <NavBar />
       <p>TestIn</p>
       <RecipeList recipiesList={this.props.recipiesList} findSelectedRecipe={this.props.findSelectedRecipe}/>
       </div>
