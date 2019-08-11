@@ -42,4 +42,7 @@ public class Ingredient {
     public void setIngredient(Ingredient ingredient) {
         this.ingredient = ingredient;
     }
+
+    public void addUser(User user) {
+    }
 }
