@@ -7,6 +7,8 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import InOutContainer from './InOutContainer'
 import InContainer from './eat_in/InContainer'
 import InRecipeContainer from './eat_in/InRecipeContainer'
+import OutContainer from './eat_out/OutContainer'
+import OutRestaurantContainer from './eat_out/OutRestaurantContainer'
 import Urls from '../helpers/keys/Urls'
 
 
@@ -16,23 +18,19 @@ class MainContainer extends Component {
       this.state = {
         user: "User",
         recipiesList: [],
-        selectedRecipe: null
+        selectedRecipe: null,
+        restaurantList: [],
+        selectedRestaurant: null
       }
-      this.findUserById = this.findUserById.bind(this)
-      this.createNewUser = this.createNewUser.bind(this)
-      this.getRecipeList = this.getRecipeList.bind(this)
-      this.findSelectedRecipe = this.findSelectedRecipe.bind(this)
+      this.findUserById = this.findUserById.bind(this);
+      this.createNewUser = this.createNewUser.bind(this);
+      this.getRecipeList = this.getRecipeList.bind(this);
+      this.findSelectedRecipe = this.findSelectedRecipe.bind(this);
+      this.getRestaurantList = this.getRestaurantList.bind(this);
+      this.findSelectedRestaurant = this.findSelectedRestaurant.bind(this);
     }
 
-    getRecipeList(){
-      const url = new Urls
-      fetch(url.urlTest())
-      .then(res => res.json())
-      .then(recipies => this.setState({recipiesList: recipies.meals}))
-      .catch(err => console.log(err));
-    }
-
-
+//Log in details from Home page
     findUserById(id){
       const url = "/api/users/"+id
       const request = new Request
@@ -43,7 +41,30 @@ class MainContainer extends Component {
 
           {/*Test above after db set up*/}
     }
+    createNewUser(user){
+      const url = "/api/users"
+      const request = new Request
+      request.post(url, user)
+      .then(user => this.setState({user: user}))
+      .catch(err => console.error)
+      .then(window.location = '/in-out');
 
+        {/* above does not have id, which needs to be returned from db */}
+    }
+    //Button on home to re-direct to create new user
+      viewNew(){
+        window.location = '/new';
+      }
+
+
+//recipe for eat in, from InOutContainer
+    getRecipeList(){
+      const url = new Urls
+      fetch(url.urlTest())
+      .then(res => res.json())
+      .then(recipies => this.setState({recipiesList: recipies.meals}))
+      .catch(err => console.log(err));
+    }
     findSelectedRecipe(id) {
       const url = new Urls
       fetch(url.getRecipeById(id))
@@ -55,22 +76,20 @@ class MainContainer extends Component {
     }
 
 
-//Called by props in sign-up component, used to generate new user then asign to state.user
-    createNewUser(user){
-      const url = "/api/users"
-      const request = new Request
-      request.post(url, user)
-      .then(user => this.setState({user: user}))
-      .catch(err => console.error)
-      .then(window.location = '/in-out');
-
-        {/* above does not have id, which needs to be returned from db */}
+//restaurant for eat out, from InOutContainer
+    getRestaurantList(){
+      const url = new Urls
+      fetch(url.urlTestRestaurant())
+      .then(res => res.json())
+      .then(restuarants => this.setState({restaurantList: restuarants.restaurants}))
+      .catch(err => console.log(err));
+    }
+    findSelectedRestaurant(id){
+      const restaurant = this.state.restaurantList[id];
+      this.setState({selectedRestaurant: restaurant})
     }
 
-//Button on home to re-direct to create new user
-    viewNew(){
-      window.location = '/new';
-    }
+
 
 
 
@@ -87,7 +106,7 @@ class MainContainer extends Component {
             />
                         {/* change above address to have user id */}
             <Route exact path="/in-out"
-            render={() => <InOutContainer user={this.state.user} getRecipeList={this.getRecipeList}/>}
+            render={() => <InOutContainer user={this.state.user} getRecipeList={this.getRecipeList} getRestaurantList={this.getRestaurantList}/>}
             />
 
             <Route  exact path="/in"
@@ -96,8 +115,12 @@ class MainContainer extends Component {
             <Route exact path="/in/recipe"
             render={() => <InRecipeContainer user={this.state.user} selectedRecipe={this.state.selectedRecipe}/>}
             />
-
-
+            <Route exact path="/out"
+            render={() => <OutContainer user={this.state.user} restaurantList={this.state.restaurantList} findSelectedRestaurant={this.findSelectedRestaurant}/>}
+            />
+            <Route exact path="/out/restaurant"
+            render={() => <OutRestaurantContainer user={this.state.user}  selectedRestaurant={this.state.selectedRestaurant}/>}
+            />
           </Switch>
          </Router>
         </div>
