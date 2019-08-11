@@ -1,5 +1,7 @@
 package com.codeclan.example.foodfinderservice.models;
 
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,11 +29,27 @@ public class User {
     @Column(name = "recipe_id")
     private String recipeId;
 
-   @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+//   @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+//    private List<CuisineType> cuisines;
+
+    @ManyToMany
+    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
+    @JoinTable(
+            joinColumns = {@JoinColumn(name = "user_id", nullable = false, updatable = false)},
+            inverseJoinColumns = {@JoinColumn(name = "cuisine_type_id", nullable = false, updatable = false)}
+    )
     private List<CuisineType> cuisines;
 
-   @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
-   private List<Ingredient> ingredients;
+//   @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+//   private List<Ingredient> ingredients;
+
+    @ManyToMany
+    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
+    @JoinTable(
+            joinColumns = {@JoinColumn(name = "user_id", nullable = false, updatable = false)},
+            inverseJoinColumns = {@JoinColumn(name = "ingredient_id", nullable = false, updatable = false)}
+    )
+    private List<Ingredient> ingredients;
 
 
     public User(String firstName, String lastName, String location, String restaurantId, String recipeId) {
@@ -110,5 +128,13 @@ public class User {
 
     public void setRecipeId(String recipeId) {
         this.recipeId = recipeId;
+    }
+
+    public void addIngredient(Ingredient ingredient) {
+        this.ingredients.add(ingredient);
+    }
+
+    public void addCuisineType(CuisineType cuisineType) {
+        this.cuisines.add(cuisineType);
     }
 }

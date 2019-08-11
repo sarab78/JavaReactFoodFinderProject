@@ -1,25 +1,32 @@
 package com.codeclan.example.foodfinderservice.models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-@Table(name = "users")
+@Table(name = "ingredients")
 public class Ingredient {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
+    private Long Id;
 
     @Column(name = "name")
     private String name;
 
-    @ManyToOne
-    @JoinColumn(name = "ingredient_id", nullable = false)
-    private Ingredient ingredient;
+    @ManyToMany
+    @JoinTable(
+            name = "users_ingredients",
+            joinColumns = {@JoinColumn(name = "ingredient_id", nullable = false, updatable = false)},
+            inverseJoinColumns = {@JoinColumn(name="user_id", nullable = false, updatable = false)}
+    )
+    private List<User> users;
 
-    public Ingredient(String name,  Ingredient ingredient) {
+    public Ingredient(String name) {
         this.name = name;
-        this.ingredient = ingredient;
+        this.users = new ArrayList<User>();
+//        this.user = user;
     }
 
     public Ingredient() {
@@ -35,11 +42,32 @@ public class Ingredient {
         this.name = name;
     }
 
-    public Ingredient getIngredient() {
-        return ingredient;
+//    public User getUser() {
+//        return user;
+//    }
+//
+//    public void setUser(User user) {
+//        this.user = user;
+//    }
+
+
+    public Long getId() {
+        return Id;
     }
 
-    public void setIngredient(Ingredient ingredient) {
-        this.ingredient = ingredient;
+    public void setId(Long id) {
+        Id = id;
+    }
+
+    public List<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<User> users) {
+        this.users = users;
+    }
+
+    public void addUser(User user){
+        this.users.add(user);
     }
 }

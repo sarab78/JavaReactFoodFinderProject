@@ -1,9 +1,11 @@
 package com.codeclan.example.foodfinderservice.models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-@Table(name = "users")
+@Table(name = "cuisine_types")
 public class CuisineType {
 
     @Id
@@ -13,18 +15,23 @@ public class CuisineType {
     @Column(name = "name")
     private String name;
 
+//    @ManyToOne
+//    @JoinColumn(name = "cuisineType_id", nullable = true)
+//    private User user;
+
+    @ManyToMany
+    @JoinTable(
+            name = "users_cuisines",
+            joinColumns = {@JoinColumn(name = "cuisine_type_id", nullable = false, updatable = false)},
+            inverseJoinColumns = {@JoinColumn(name = "user_id", nullable = false, updatable = false)}
+    )
+    private List<User> users;
 
 
-    @ManyToOne
-    @JoinColumn(name = "cuisineType_id", nullable = false)
-    private  CuisineType cuisineType;
-
-
-
-
-    public CuisineType(String name,  CuisineType cuisineType ) {
+    public CuisineType(String name) {
         this.name = name;
-        this.cuisineType = cuisineType;
+        this.users = new ArrayList<User>();
+//        this.user= user;
     }
 
     public CuisineType() {
@@ -46,11 +53,17 @@ public class CuisineType {
         this.name = name;
     }
 
-    public CuisineType getCuisineType() {
-        return cuisineType;
+    public void addUser(User user) {
+        this.users.add(user);
     }
 
-    public void setCuisineType(CuisineType cuisineType) {
-        this.cuisineType = cuisineType;
-    }
+//    public User getUser() {
+//        return user;
+//    }
+
+//    public void setUser(User user) {
+//        this.user = user;
+//    }
+
+
 }
