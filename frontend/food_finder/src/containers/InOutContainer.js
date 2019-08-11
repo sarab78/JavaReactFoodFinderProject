@@ -1,23 +1,31 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
-const InOutContainer = (props) => {
+class InOutContainer extends Component{
 
 
-  const inRoute = '/in'
-  const outRoute = '/out'
+  componentDidMount() {
+    this.props.getRecipeList()
+  }
 
-  return(
+  // const handleClick = (event) => {
+  //   props.getRecipeList()
+  // }
+
+  render(){
+    return(
     <div>
       <p>TestIn/Out</p>
-        <Link to={inRoute}>
-          <button type='button'>IN</button>
+        <Link to='/in'>
+          <button  type='button'>IN</button>
         </Link>
-        <Link to={outRoute}>
+        <Link to='/out'>
           <button type='button'>OUT</button>
         </Link>
     </div>
   )
 };
+
+}
 
 export default InOutContainer;
