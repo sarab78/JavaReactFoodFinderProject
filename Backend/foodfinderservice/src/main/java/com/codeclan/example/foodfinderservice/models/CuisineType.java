@@ -53,4 +53,7 @@ public class CuisineType {
     public void setCuisineType(CuisineType cuisineType) {
         this.cuisineType = cuisineType;
     }
+
+    public void addUser(User user) {
+    }
 }
