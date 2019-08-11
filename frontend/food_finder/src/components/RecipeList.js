@@ -8,13 +8,21 @@ const RecipeList = (props) => {
 }
 
 
+function showButton(checkRecipeSelected) {
+   if(!checkRecipeSelected) return null;
+   return (
+      <div>
+        <h1>Click me!</h1>
+      </div>
+   )
+}
+
 const recipies = props.recipiesList.map((recipe, index) => {
 
   return <li key={index}>
-          <RecipeListItem recipe={recipe} findSelectedRecipe={props.findSelectedRecipe}/>
+          <RecipeListItem recipe={recipe} findSelectedRecipe={props.findSelectedRecipe} showButton={showButton}/>
         </li>
 })
-
 
 
 
@@ -22,6 +30,7 @@ const recipies = props.recipiesList.map((recipe, index) => {
   <div>
     <p>TEstRecipeList</p>
       {recipies}
+      {showButton(props.selectedRecipe)}
   </div>
 )
 };
