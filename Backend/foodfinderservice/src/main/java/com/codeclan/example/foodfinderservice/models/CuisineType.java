@@ -57,6 +57,7 @@ public class CuisineType {
         this.users.add(user);
     }
 
+//<<<<<<< HEAD
 //    public User getUser() {
 //        return user;
 //    }
@@ -66,4 +67,12 @@ public class CuisineType {
 //    }
 
 
+//=======
+//    public void setCuisineType(CuisineType cuisineType) {
+//        this.cuisineType = cuisineType;
+//    }
+//
+//    public void addUser(User user) {
+//    }
+//>>>>>>> develop
 }

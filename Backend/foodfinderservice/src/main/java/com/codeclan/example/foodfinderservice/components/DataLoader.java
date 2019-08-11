@@ -52,7 +52,7 @@ public class DataLoader implements ApplicationRunner {
         user1.addCuisineType(cuisineType2);
         userRepoistory.save(user1);
 
-        ingredient2.addUser(user2);
+        ingredient2.addUser(user1);
         ingredientRepository.save(ingredient2);
 
 //        user1.addCuisineType(cuisineType1);
