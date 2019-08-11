@@ -5,8 +5,11 @@ class InOutContainer extends Component{
 
 
   componentDidMount() {
-    this.props.getRecipeList()
+    this.props.getRecipeList();
+    this.props.getRestaurantList();
   }
+
+
 
   // const handleClick = (event) => {
   //   props.getRecipeList()
