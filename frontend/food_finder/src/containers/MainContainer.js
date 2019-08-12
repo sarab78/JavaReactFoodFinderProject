@@ -60,10 +60,12 @@ class MainContainer extends Component {
 //recipe for eat in, from InOutContainer
     getRecipeList(){
       const url = new Urls
-      const ingredients = for (ingredient: this.state.user._embedded.ingredients) {
-        ingredients = ingredient.name + ","
-      }
-      ingredients.slice(-1)
+      let ingredients = ""
+      const addIngredients = () => {for (let ingredient of  this.state.user._embedded.ingredients) {
+        ingredients += ingredient.name + ","
+      } ingredients = ingredients.slice(0, -1)}
+      addIngredients();
+
       console.log(ingredients);
       fetch(url.urlIngredients() + ingredients)
       .then(res => res.json())
