@@ -4,22 +4,30 @@ const SignUpForm = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+        // console.log(event.target.cuisine.value);
+    let cuisineChoice = props.cuisineTypes.slice(event.target.cuisine.value, event.target.cuisine.value + 1)
+    // cuisineChoice = cusine {id: 1, name: 'Chinese', cuisine_id: 1}
+    console.log(cuisineChoice);
+    let ingredientChoice = props.ingredients.slice(event.target.ingredient.value, event.target.ingredient.value + 1)
+    // ingredientChoice = ingredientChoice[0].keys.slice(0, 1)
+
     const user = {
       "firstName": event.target.firstName.value,
       "lastName": event.target.lastName.value,
       "location": event.target.location.value,
-      "cuisine": event.target.cuisine.value,
-      "ingredient": event.target.ingredient.value
+      "cuisine": cuisineChoice[0],
+      "ingredient": ingredientChoice[0]
     }
     console.log(user);
     props.signUpContainer(user);
   }
 
   const cuisineOptions = props.cuisineTypes.map((cuisine, index) => {
-    return <option type="option" name="cusines" key={index} value={cuisine}>{cuisine.name}</option>
+    return <option type="option" name="cuisines" key={index} value={index}>{cuisine.name}</option>
+    console.log(cuisine);
   })
   const ingredientOptions = props.ingredients.map((ingredient, index) => {
-    return <option type="option" name="ingredients" key={index} value={ingredient}>{ingredient.name}</option>
+    return <option type="option" name="ingredients" key={index} value={index}>{ingredient.name}</option>
   })
 
 
