@@ -89,7 +89,7 @@ class MainContainer extends Component {
       const setCuisineId = () => {for (let cuisine of  this.state.user._embedded.cuisines){
         cuisineId += cuisine.cusine_id + '%2C'
       } cuisineId = cuisineId.slice(0, -3)}
-      // console.log(cuisineId);
+      console.log(cuisineId);
       setCuisineId()
       fetch(url.urlRestaurantCusine() + cuisineId)
       .then(res => res.json())
@@ -100,6 +100,7 @@ class MainContainer extends Component {
       const restaurant = this.state.restaurantList[id];
       this.setState({selectedRestaurant: restaurant})
     }
+
 
 
 
