@@ -22,6 +22,7 @@ class MainContainer extends Component {
         restaurantList: [],
         selectedRestaurant: null
       }
+      
       this.findUserById = this.findUserById.bind(this);
       this.createNewUser = this.createNewUser.bind(this);
       this.getRecipeList = this.getRecipeList.bind(this);
@@ -66,7 +67,6 @@ class MainContainer extends Component {
       } ingredients = ingredients.slice(0, -1)}
       addIngredients();
 
-      console.log(ingredients);
       fetch(url.urlIngredients() + ingredients)
       .then(res => res.json())
       .then(recipies => this.setState({recipiesList: recipies.meals}))
@@ -86,7 +86,14 @@ class MainContainer extends Component {
 //restaurant for eat out, from InOutContainer
     getRestaurantList(){
       const url = new Urls
-      fetch(url.urlTestRestaurant())
+      let cuisineId = ""
+      // console.log(this.state.user._embedded.cuisines[0].cuisine_id);
+      const setCuisineId = () => {for (let cuisine of  this.state.user._embedded.cuisines){
+        cuisineId += cuisine.cuisine_id + '%2C'
+      } cuisineId = cuisineId.slice(0, -3)}
+
+      setCuisineId()
+      fetch(url.urlRestaurantCusine() + cuisineId)
       .then(res => res.json())
       .then(restuarants => this.setState({restaurantList: restuarants.restaurants}))
       .catch(err => console.log(err));
@@ -95,6 +102,7 @@ class MainContainer extends Component {
       const restaurant = this.state.restaurantList[id];
       this.setState({selectedRestaurant: restaurant})
     }
+
 
 
 
