@@ -19,7 +19,7 @@ const RestaurantList = (props) => {
 
   return (
       <div>
-      <p> Test REstaurant List</p>
+      <h3> Your Local Restaurants</h3>
       <ul>
         {list}
       </ul>
