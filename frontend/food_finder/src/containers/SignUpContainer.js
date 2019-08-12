@@ -55,7 +55,7 @@ class SignUpContainer extends Component {
         <div>
           <h1>FoodFinder</h1>
           <p>Please sign up to our service below</p>
-          <SignUpForm signUpContainer={this.createNewUser}/>
+          <SignUpForm signUpContainer={this.createNewUser} cuisineTypes={this.state.cuisineTypes} ingredients={this.state.ingredients}/>
         </div>
     )
   }
