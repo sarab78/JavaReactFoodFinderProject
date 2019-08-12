@@ -22,7 +22,7 @@ class MainContainer extends Component {
         restaurantList: [],
         selectedRestaurant: null
       }
-      
+
       this.findUserById = this.findUserById.bind(this);
       this.createNewUser = this.createNewUser.bind(this);
       this.getRecipeList = this.getRecipeList.bind(this);
@@ -43,7 +43,7 @@ class MainContainer extends Component {
 
     }
     createNewUser(user){
-      const url = "/api/users"
+      const url = "/users"
       const request = new Request
       request.post(url, user)
       .then(user => this.setState({user: user}))

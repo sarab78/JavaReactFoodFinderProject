@@ -8,13 +8,19 @@ const SignUpForm = (props) => {
       "firstName": event.target.firstName.value,
       "lastName": event.target.lastName.value,
       "location": event.target.location.value,
+      "cuisine": event.target.cuisine.value,
+      "ingredient": event.target.ingredient.value
     }
+    console.log(user);
     props.signUpContainer(user);
   }
 
-  // const cuisineOptions = props.cuisineTypes.map((cuisine, key) => {
-  //   return <li><input type="checkbox" name="cusines" value={key}>{cuisine.name}</input></li>
-  // })
+  const cuisineOptions = props.cuisineTypes.map((cuisine, index) => {
+    return <option type="option" name="cusines" key={index} value={cuisine}>{cuisine.name}</option>
+  })
+  const ingredientOptions = props.ingredients.map((ingredient, index) => {
+    return <option type="option" name="ingredients" key={index} value={ingredient}>{ingredient.name}</option>
+  })
 
 
 
@@ -26,19 +32,17 @@ const SignUpForm = (props) => {
         <input type="text" placeholder="Last Name" name="lastName"/>
         <input type="text" placeholder="Location" name="location"/>
         <br/>
-        <label>Choose your favourite ingredients</label>
+        <label/>Please choose your favourite cuisine type
         <br/>
-        <input type="checkbox" name="cuisine" value="2"/>Chicken
-        <input type="checkbox" name="cuisine" value="6"/>Eggs
-        <input type="checkbox" name="cuisine" value="3"/>Cheese
-        <input type="checkbox" name="cuisine" value="4"/>Pasta
+        <select name="cuisine">
+        {cuisineOptions}
+        </select>
         <br/>
-        <label>Choose your favourite Cuisines</label>
+        <label/>Please choose your favourite main ingredient
         <br/>
-        <input type="checkbox" name="cuisine" value="2"/>Italian
-        <input type="checkbox" name="cuisine" value="1"/>Chinese
-        <input type="checkbox" name="cuisine" value="3"/>Indian
-        <input type="checkbox" name="cuisine" value="10"/>Thai
+        <select name="ingredient">
+        {ingredientOptions}
+        </select>
         <br/>
         <button type="submit">Save</button>
       </form>
