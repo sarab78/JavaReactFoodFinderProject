@@ -70,4 +70,11 @@ public class CuisineType {
         this.users = users;
     }
 
+    public int getCuisine_id() {
+        return cuisine_id;
+    }
+
+    public void setCuisine_id(int cuisine_id) {
+        this.cuisine_id = cuisine_id;
+    }
 }
