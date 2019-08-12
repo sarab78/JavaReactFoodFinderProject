@@ -20,6 +20,10 @@ class Urls{
   urlTestRestaurant(){
     return 'https://developers.zomato.com/api/v2.1/search?entity_id=77&entity_type=city&count=20&cuisines=22%2C133&apikey=57d965e80aa4daf08b992fdc63f2c7bc'
   }
+
+    urlRestaurantCusine(){
+      return 'https://developers.zomato.com/api/v2.1/search?entity_id=77&entity_type=city&count=20&apikey=57d965e80aa4daf08b992fdc63f2c7bc&cuisines='
+    }
 }
 
 

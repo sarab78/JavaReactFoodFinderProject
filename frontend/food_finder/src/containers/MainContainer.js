@@ -66,7 +66,6 @@ class MainContainer extends Component {
       } ingredients = ingredients.slice(0, -1)}
       addIngredients();
 
-      console.log(ingredients);
       fetch(url.urlIngredients() + ingredients)
       .then(res => res.json())
       .then(recipies => this.setState({recipiesList: recipies.meals}))
@@ -86,7 +85,11 @@ class MainContainer extends Component {
 //restaurant for eat out, from InOutContainer
     getRestaurantList(){
       const url = new Urls
-      fetch(url.urlTestRestaurant())
+      let cuisineId = ""
+      const setCuisineId = () => {for (let cuisine of  this.state.user._embedded.cuisines){
+        cuisineId += cuisine.cusine_id + ','
+      } cuisineId = cuisineId.slice(0, -1)}
+      fetch(url.urlRestaurantCusine() + cuisineId)
       .then(res => res.json())
       .then(restuarants => this.setState({restaurantList: restuarants.restaurants}))
       .catch(err => console.log(err));
