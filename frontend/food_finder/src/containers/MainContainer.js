@@ -61,12 +61,11 @@ class MainContainer extends Component {
 //recipe for eat in, from InOutContainer
     getRecipeList(){
       const url = new Urls
-      let ingredients = ""
-      const addIngredients = () => {for (let ingredient of  this.state.user._embedded.ingredients) {
-        ingredients += ingredient.name + ","
-      } ingredients = ingredients.slice(0, -1)}
-      addIngredients();
-
+      let ingredients = this.state.user._embedded.ingredient.name;
+      // const addIngredients = () => {for (let ingredient of  this.state.user._embedded.ingredients) {
+      //   ingredients += ingredient.name + ","
+      // } ingredients = ingredients.slice(0, -1)}
+      // addIngredients();
       fetch(url.urlIngredients() + ingredients)
       .then(res => res.json())
       .then(recipies => this.setState({recipiesList: recipies.meals}))
@@ -86,13 +85,12 @@ class MainContainer extends Component {
 //restaurant for eat out, from InOutContainer
     getRestaurantList(){
       const url = new Urls
-      let cuisineId = ""
-      // console.log(this.state.user._embedded.cuisines[0].cuisine_id);
-      const setCuisineId = () => {for (let cuisine of  this.state.user._embedded.cuisines){
-        cuisineId += cuisine.cuisine_id + '%2C'
-      } cuisineId = cuisineId.slice(0, -3)}
-
-      setCuisineId()
+      let cuisineId = this.state.user._embedded.cuisine.cuisine_id;
+      // const setCuisineId = () => {for (let cuisine of  this.state.user._embedded.cuisines){
+      //   cuisineId += cuisine.cuisine_id + '%2C'
+      // } cuisineId = cuisineId.slice(0, -3)}
+      //
+      // setCuisineId()
       fetch(url.urlRestaurantCusine() + cuisineId)
       .then(res => res.json())
       .then(restuarants => this.setState({restaurantList: restuarants.restaurants}))
