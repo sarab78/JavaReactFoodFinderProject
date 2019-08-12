@@ -15,6 +15,9 @@ public class CuisineType {
     @Column(name = "name")
     private String name;
 
+    @Column(name = "cuisine_id")
+    private int cuisine_id;
+
 //    @ManyToOne
 //    @JoinColumn(name = "cuisineType_id", nullable = true)
 //    private User user;
@@ -28,9 +31,11 @@ public class CuisineType {
     private List<User> users;
 
 
-    public CuisineType(String name) {
+    public CuisineType(String name,  int cuisine_id) {
         this.name = name;
+        this.cuisine_id = cuisine_id;
         this.users = new ArrayList<User>();
+
 //        this.user= user;
     }
 
@@ -57,7 +62,14 @@ public class CuisineType {
         this.users.add(user);
     }
 
-//<<<<<<< HEAD
+    public List<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<User> users) {
+        this.users = users;
+    }
+    //<<<<<<< HEAD
 //    public User getUser() {
 //        return user;
 //    }
