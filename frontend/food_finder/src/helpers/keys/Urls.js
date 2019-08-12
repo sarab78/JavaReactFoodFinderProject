@@ -7,6 +7,10 @@ class Urls{
 
   }
 
+  urlIngredients(){
+    return 'https://www.themealdb.com/api/json/v2/8673533/filter.php?i='
+  }
+
   getRecipeById(id){
 
   return 'https://www.themealdb.com/api/json/v2/8673533/lookup.php?i=' + id

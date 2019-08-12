@@ -10,7 +10,6 @@ class OutContainer extends Component {
     return (
       <div>
       <NavBar />
-        <p>TEstOutContainer</p>
         <RestaurantList restaurantList={this.props.restaurantList} selectedRestaurant={this.props.findSelectedRestaurant}/>
       </div>
     );

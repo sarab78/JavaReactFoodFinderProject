@@ -28,7 +28,7 @@ const recipies = props.recipiesList.map((recipe, index) => {
 
   return(
   <div>
-    <p>TEstRecipeList</p>
+    <h3>YOUR RECIPES</h3>
       {recipies}
       {showButton(props.selectedRecipe)}
   </div>

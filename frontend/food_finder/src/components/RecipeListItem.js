@@ -13,7 +13,7 @@ const RecipeListItem = (props) => {
 
   return(
     <div>
-      <img onClick={handleClick} src={props.recipe.strMealThumb}></img>
+      <img onClick={handleClick} src={props.recipe.strMealThumb} width="100" height="100"></img>
       <p onClick={handleClick}>{props.recipe.strMeal}</p>
       <Link to='/in/recipe'>
       <button type="button">Take me to this recipe!</button>

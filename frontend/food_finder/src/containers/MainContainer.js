@@ -16,7 +16,7 @@ class MainContainer extends Component {
     constructor(props){
       super(props)
       this.state = {
-        user: "User",
+        user: null,
         recipiesList: [],
         selectedRecipe: null,
         restaurantList: [],
@@ -32,14 +32,14 @@ class MainContainer extends Component {
 
 //Log in details from Home page
     findUserById(id){
-      const url = "/api/users/"+id
-      const request = new Request
+      console.log("test-signin");
+      const url = "/users/"+id
+      const request = new Request()
       request.get(url)
       .then(user => this.setState({user: user}))
       .catch(err => console.error)
-      .then(window.location = '/in-out');
+      // .then(Redirect to='/in-out')
 
-          {/*Test above after db set up*/}
     }
     createNewUser(user){
       const url = "/api/users"
@@ -47,7 +47,7 @@ class MainContainer extends Component {
       request.post(url, user)
       .then(user => this.setState({user: user}))
       .catch(err => console.error)
-      .then(window.location = '/in-out');
+      // .then(Redirect to='/in-out');
 
         {/* above does not have id, which needs to be returned from db */}
     }
@@ -60,7 +60,14 @@ class MainContainer extends Component {
 //recipe for eat in, from InOutContainer
     getRecipeList(){
       const url = new Urls
-      fetch(url.urlTest())
+      let ingredients = ""
+      const addIngredients = () => {for (let ingredient of  this.state.user._embedded.ingredients) {
+        ingredients += ingredient.name + ","
+      } ingredients = ingredients.slice(0, -1)}
+      addIngredients();
+
+      console.log(ingredients);
+      fetch(url.urlIngredients() + ingredients)
       .then(res => res.json())
       .then(recipies => this.setState({recipiesList: recipies.meals}))
       .catch(err => console.log(err));
