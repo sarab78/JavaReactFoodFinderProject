@@ -22,6 +22,7 @@ class MainContainer extends Component {
         restaurantList: [],
         selectedRestaurant: null
       }
+      
       this.findUserById = this.findUserById.bind(this);
       this.createNewUser = this.createNewUser.bind(this);
       this.getRecipeList = this.getRecipeList.bind(this);
