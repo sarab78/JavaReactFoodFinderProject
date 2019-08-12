@@ -46,7 +46,7 @@ class MainContainer extends Component {
       const url = "/users"
       const request = new Request
       request.post(url, user)
-      .then(user => this.setState({user: user}))
+      .then(newUser => this.setState({user: newUser}))
       .catch(err => console.error)
       // .then(Redirect to='/in-out');
 
