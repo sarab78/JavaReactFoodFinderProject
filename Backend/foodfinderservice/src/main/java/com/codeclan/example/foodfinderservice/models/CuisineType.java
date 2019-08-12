@@ -57,7 +57,15 @@ public class CuisineType {
         this.users.add(user);
     }
 
-//<<<<<<< HEAD
+    public List<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<User> users) {
+        this.users = users;
+    }
+
+    //<<<<<<< HEAD
 //    public User getUser() {
 //        return user;
 //    }

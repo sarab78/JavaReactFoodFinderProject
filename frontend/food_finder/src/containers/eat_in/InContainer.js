@@ -39,7 +39,6 @@ class InContainer extends Component {
 
       <div>
       <NavBar />
-      <p>TestIn</p>
       <RecipeList recipiesList={this.props.recipiesList} findSelectedRecipe={this.props.findSelectedRecipe}/>
       </div>
     );
