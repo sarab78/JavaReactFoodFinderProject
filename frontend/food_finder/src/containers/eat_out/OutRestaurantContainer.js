@@ -2,6 +2,10 @@ import React from 'react';
 
 const OutRestaurantContainer = (props) => {
 
+  if (!props.user) {
+    window.location = '/home'
+  }
+
 const reviews = props.selectedRestaurant.restaurant.all_reviews.reviews.map((review) => {
   return <li> Rating: {review.review.rating} <br></br>
             {review.review.review_text} </li>

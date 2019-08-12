@@ -5,11 +5,11 @@ const SignUpForm = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const user = {
-      "firstName": event.target.firstname.value,
-      "lastName": event.target.lastname.value,
+      "firstName": event.target.firstName.value,
+      "lastName": event.target.lastName.value,
       "location": event.target.location.value,
     }
-    props.handleSignUp(user);
+    props.signUpContainer(user);
   }
 
 

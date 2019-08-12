@@ -18,12 +18,12 @@ class InOutContainer extends Component{
   render(){
     return(
     <div>
-      <p>TestIn/Out</p>
+      <h3>Choose Your Menu</h3>
         <Link to='/in'>
-          <button  type='button'>IN</button>
+          <button type='button'>EAT IN</button>
         </Link>
         <Link to='/out'>
-          <button type='button'>OUT</button>
+          <button type='button'>EAT OUT</button>
         </Link>
     </div>
   )
