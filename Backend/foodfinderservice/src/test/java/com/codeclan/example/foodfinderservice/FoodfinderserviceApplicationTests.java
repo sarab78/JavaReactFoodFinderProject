@@ -1,5 +1,6 @@
 package com.codeclan.example.foodfinderservice;
 
+import com.codeclan.example.foodfinderservice.models.CuisineType;
 import com.codeclan.example.foodfinderservice.models.Ingredient;
 import com.codeclan.example.foodfinderservice.models.User;
 import com.codeclan.example.foodfinderservice.repositories.CuisineTypeRepository.CuisineTypeRepository;
@@ -30,14 +31,15 @@ public class FoodfinderserviceApplicationTests {
 
 	@Test
 	public void createUserAndIngredientThenSave(){
-		User user1 = new User("James", "Bloggs", "Glasgow", "","");
-		userRepository.save(user1);
+		CuisineType cuisine = new CuisineType("Chinese", 25);
+		cuisineTypeRepository.save(cuisine);
 
 		Ingredient ingredient1 = new Ingredient("Cucumber");
 		ingredientRepository.save(ingredient1);
 
-		user1.addIngredient(ingredient1);
-		ingredient1.addUser(user1);
+		User user1 = new User("James", "Bloggs", "Glasgow", cuisine, ingredient1);
+		userRepository.save(user1);
+
 	}
 
 

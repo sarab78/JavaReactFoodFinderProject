@@ -13,9 +13,9 @@ public interface EmbedIngredientsCuisines {
     String getFirstName();
     String getLastName();
     String getLocation();
-    String getRestaurantId();
-    String getRecipeId();
-    List<Ingredient> getIngredients();
-    List<CuisineType> getCuisines();
+    List<String> getRestaurantId();
+    List<String> getRecipeId();
+    Ingredient getIngredient();
+    CuisineType getCuisine();
 
 }

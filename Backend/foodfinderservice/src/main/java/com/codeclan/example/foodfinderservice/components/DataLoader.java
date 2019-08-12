@@ -27,11 +27,6 @@ public class DataLoader implements ApplicationRunner {
 
     public void run(ApplicationArguments args) {
 
-        User user1 = new User("James", "Bloggs", "Glasgow", "","");
-        userRepoistory.save(user1);
-
-        User user2 = new User("Danny", "Smith", "Glasgow", "","");
-        userRepoistory.save(user2);
 
 
         Ingredient ingredient1 = new Ingredient("Cucumber");
@@ -55,8 +50,8 @@ public class DataLoader implements ApplicationRunner {
         Ingredient ingredient7 = new Ingredient("Cream");
         ingredientRepository.save(ingredient7);
 
-        Ingredient ingredient8 = new Ingredient("rice");
-        ingredientRepository.save(ingredient7);
+        Ingredient ingredient8 = new Ingredient("Rice");
+        ingredientRepository.save(ingredient8);
 
         Ingredient ingredient9 = new Ingredient("Meat");
         ingredientRepository.save(ingredient9);
@@ -94,10 +89,15 @@ public class DataLoader implements ApplicationRunner {
         CuisineType cuisineType10 = new CuisineType("Thai", 95);
         cuisineTypeRepository.save(cuisineType10);
 
-        user1.addIngredient(ingredient1);
-        user1.addIngredient(ingredient2);
-        user1.addCuisineType(cuisineType1);
-        user1.addCuisineType(cuisineType2);
+
+        User user1 = new User("James", "Bloggs", "Glasgow", cuisineType3,ingredient3);
+        userRepoistory.save(user1);
+
+        User user2 = new User("Danny", "Smith", "Glasgow", cuisineType2,ingredient1);
+        userRepoistory.save(user2);
+
+        user1.setIngredient(ingredient1);
+        user1.setCuisine(cuisineType1);
         userRepoistory.save(user1);
 
         ingredient2.addUser(user2);

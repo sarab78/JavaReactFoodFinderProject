@@ -1,5 +1,6 @@
 package com.codeclan.example.foodfinderservice.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
@@ -24,42 +25,45 @@ public class User {
     private String location;
 
     @Column(name = "restaurant_id")
-    private String restaurantId;
+    private ArrayList<String> restaurantId;
 
     @Column(name = "recipe_id")
-    private String recipeId;
+    private ArrayList<String> recipeId;
 
 //   @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
 //    private List<CuisineType> cuisines;
 
-    @ManyToMany
+    @JsonIgnoreProperties("users")
+    @ManyToOne
     @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
-    @JoinTable(
-            joinColumns = {@JoinColumn(name = "user_id", nullable = false, updatable = false)},
-            inverseJoinColumns = {@JoinColumn(name = "cuisine_type_id", nullable = false, updatable = false)}
-    )
-    private List<CuisineType> cuisines;
+    @JoinColumn(name="cuisine_id", nullable=false)
+    private CuisineType cuisine;
+//            joinColumns = {@JoinColumn(name = "user_id", nullable = false, updatable = false)},
+//            inverseJoinColumns = {@JoinColumn(name = "cuisine_type_id", nullable = false, updatable = false)}
+
 
 //   @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
 //   private List<Ingredient> ingredients;
 
-    @ManyToMany
+    @JsonIgnoreProperties("users")
+    @ManyToOne
     @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
-    @JoinTable(
-            joinColumns = {@JoinColumn(name = "user_id", nullable = false, updatable = false)},
-            inverseJoinColumns = {@JoinColumn(name = "ingredient_id", nullable = false, updatable = false)}
-    )
-    private List<Ingredient> ingredients;
+    @JoinColumn(name="ingredient_id", nullable=false)
+    private Ingredient ingredient;
+//            joinColumns = {@JoinColumn(name = "user_id", nullable = false, updatable = false)},
+//            inverseJoinColumns = {@JoinColumn(name = "ingredient_id", nullable = false, updatable = false)}
 
 
-    public User(String firstName, String lastName, String location, String restaurantId, String recipeId) {
+
+
+    public User(String firstName, String lastName, String location, CuisineType cuisines, Ingredient ingredient) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.location = location;
-        this.restaurantId = restaurantId;
-        this.recipeId = recipeId;
-        this.cuisines = new ArrayList<CuisineType>();
-        this.ingredients = new ArrayList<Ingredient>();
+        this.restaurantId = new ArrayList<String>();
+        this.recipeId = new ArrayList<String>();
+        this.cuisine = cuisines;
+        this.ingredient = ingredient;
 
     }
 
@@ -98,43 +102,43 @@ public class User {
         this.location = location;
     }
 
-    public List<CuisineType> getCuisines() {
-        return cuisines;
-    }
-
-    public void setCuisines(List<CuisineType> cuisines) {
-        this.cuisines = cuisines;
-    }
-
-    public List<Ingredient> getIngredients() {
-        return ingredients;
-    }
-
-    public void setIngredients(List<Ingredient> ingredients) {
-        this.ingredients = ingredients;
-    }
-
-    public String getRestaurantId() {
+    public ArrayList<String> getRestaurantId() {
         return restaurantId;
     }
 
-    public void setRestaurantId(String restaurantId) {
+    public void setRestaurantId(ArrayList<String> restaurantId) {
         this.restaurantId = restaurantId;
     }
 
-    public String getRecipeId() {
+    public ArrayList<String> getRecipeId() {
         return recipeId;
     }
 
-    public void setRecipeId(String recipeId) {
+    public void setRecipeId(ArrayList<String> recipeId) {
         this.recipeId = recipeId;
     }
 
-    public void addIngredient(Ingredient ingredient) {
-        this.ingredients.add(ingredient);
+    public CuisineType getCuisine() {
+        return cuisine;
     }
 
-    public void addCuisineType(CuisineType cuisineType) {
-        this.cuisines.add(cuisineType);
+    public void setCuisine(CuisineType cuisine) {
+        this.cuisine = cuisine;
+    }
+
+    public Ingredient getIngredient() {
+        return ingredient;
+    }
+
+    public void setIngredient(Ingredient ingredient) {
+        this.ingredient = ingredient;
+    }
+
+    public void addRecipe(String recipeId){
+        this.recipeId.add(recipeId);
+    }
+
+    public void addRestaurant(String restaurantId){
+        this.restaurantId.add(restaurantId);
     }
 }

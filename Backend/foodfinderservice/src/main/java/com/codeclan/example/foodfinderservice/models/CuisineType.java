@@ -1,5 +1,7 @@
 package com.codeclan.example.foodfinderservice.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,13 +24,15 @@ public class CuisineType {
 //    @JoinColumn(name = "cuisineType_id", nullable = true)
 //    private User user;
 
-    @ManyToMany
-    @JoinTable(
-            name = "users_cuisines",
-            joinColumns = {@JoinColumn(name = "cuisine_type_id", nullable = false, updatable = false)},
-            inverseJoinColumns = {@JoinColumn(name = "user_id", nullable = false, updatable = false)}
-    )
+    @JsonIgnoreProperties("cuisine_types")
+    @OneToMany(mappedBy = "cuisine", fetch = FetchType.LAZY)
     private List<User> users;
+//    @JoinTable(
+//            name = "users_cuisines",
+//            joinColumns = {@JoinColumn(name = "cuisine_type_id", nullable = false, updatable = false)},
+//            inverseJoinColumns = {@JoinColumn(name = "user_id", nullable = false, updatable = false)}
+//    )
+
 
 
     public CuisineType(String name,  int cuisine_id) {
