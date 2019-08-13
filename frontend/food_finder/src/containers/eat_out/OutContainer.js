@@ -12,7 +12,7 @@ class OutContainer extends Component {
       <div className="content">
       <NavBar />
         <h3> Your Local Restaurants</h3>
-        <RestaurantList restaurantList={this.props.restaurantList} selectedRestaurant={this.props.findSelectedRestaurant}/>
+        <RestaurantList restaurantList={this.props.restaurantList} selectedRestaurant={this.props.findSelectedRestaurant} selectedRestaurantInfo={this.props.selectedRestaurant}/>
       </div>
     );
   }

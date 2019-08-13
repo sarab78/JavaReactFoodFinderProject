@@ -30,7 +30,6 @@ const recipies = props.recipiesList.map((recipe, index) => {
 
   return(
   <div className="recipe-list">
-    
       {recipies}
       {showButton()}
   </div>
