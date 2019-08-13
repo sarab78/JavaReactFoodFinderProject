@@ -25,7 +25,7 @@ public class User {
     private String location;
 
     @Column(name = "restaurant_id")
-    private ArrayList<String> restaurantId;
+    private List<String> restaurantId;
 
     @Column(name = "recipe_id")
     private ArrayList<String> recipeId;
@@ -60,7 +60,7 @@ public class User {
         this.firstName = firstName;
         this.lastName = lastName;
         this.location = location;
-        this.restaurantId = new ArrayList<String>();
+        this.restaurantId = new ArrayList<>();
         this.recipeId = new ArrayList<String>();
         this.cuisine = cuisines;
         this.ingredient = ingredient;
@@ -102,7 +102,7 @@ public class User {
         this.location = location;
     }
 
-    public ArrayList<String> getRestaurantId() {
+    public List<String> getRestaurantId() {
         return restaurantId;
     }
 

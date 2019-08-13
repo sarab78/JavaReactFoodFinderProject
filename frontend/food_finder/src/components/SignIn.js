@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Redirect, Link} from 'react-router-dom';
+import './SignIn.css'
 
 
 class SignIn extends Component{
@@ -25,7 +26,7 @@ setRedirect(){
 renderRedirect(){
  if (this.state.redirect) {
    return <Link to='/in-out'>
-            <button type="button">Take me to choice</button>
+            <button type="button">Start choosing!</button>
          </Link>
  }
 }
