@@ -15,10 +15,12 @@ const SignUpForm = (props) => {
       "firstName": event.target.firstName.value,
       "lastName": event.target.lastName.value,
       "location": event.target.location.value,
-      "cuisine": cuisineChoice[0],
-      "ingredient": ingredientChoice[0]
+      "cuisine": cuisineChoice[0]._links.self,
+      "ingredient": ingredientChoice[0]._links.self
     }
     console.log(user);
+    console.log(cuisineChoice[0]._links.self);
+    console.log(ingredientChoice[0]._links.self);
     props.signUpContainer(user);
   }
 
