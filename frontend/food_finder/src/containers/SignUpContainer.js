@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import SignUpForm from '../components/SignUpForm'
 import Request from '../helpers/Request'
+import './SignUpContainer.css'
 
 class SignUpContainer extends Component {
 
@@ -52,8 +53,8 @@ class SignUpContainer extends Component {
 
   render(){
     return(
-        <div>
-          <h1>FoodFinder</h1>
+        <div className="sign-up-content">
+          <h1>D-In or Out</h1>
           <p>Please sign up to our service below</p>
           <SignUpForm signUpContainer={this.createNewUser} cuisineTypes={this.state.cuisineTypes} ingredients={this.state.ingredients}/>
         </div>
