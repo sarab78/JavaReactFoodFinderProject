@@ -9,6 +9,10 @@ const InRecipeContainer = (props) => {
     return "Loading..."
   }
 
+  const addToRecipeFav = () => {
+    props.addToRecipeFavMain(props.selectedRecipe)
+  }
+
   return(
     <div className="recipe-detials">
 
@@ -17,7 +21,8 @@ const InRecipeContainer = (props) => {
     <div className="recipe-name">
     <h1>{props.selectedRecipe.strMeal}</h1>
     </div>
-
+    <button onClick={addToRecipeFav}>Add To My Favourites</button>
+    <br/>
     <div className="recipe-image">
     <img src={props.selectedRecipe.strMealThumb}></img>
     </div>

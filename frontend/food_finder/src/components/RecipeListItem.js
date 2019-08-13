@@ -5,7 +5,6 @@ const RecipeListItem = (props) => {
 
 
   const handleClick = (event) => {
-    console.log('click')
     event.preventDefault();
     props.findSelectedRecipe(props.recipe.idMeal);
     props.showButton(props.selectedRecipe)

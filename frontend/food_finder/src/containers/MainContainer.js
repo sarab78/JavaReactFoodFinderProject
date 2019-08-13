@@ -10,6 +10,7 @@ import InRecipeContainer from './eat_in/InRecipeContainer'
 import OutContainer from './eat_out/OutContainer'
 import OutRestaurantContainer from './eat_out/OutRestaurantContainer'
 import Urls from '../helpers/keys/Urls'
+import './MainContainer.css'
 
 
 class MainContainer extends Component {
@@ -29,11 +30,12 @@ class MainContainer extends Component {
       this.findSelectedRecipe = this.findSelectedRecipe.bind(this);
       this.getRestaurantList = this.getRestaurantList.bind(this);
       this.findSelectedRestaurant = this.findSelectedRestaurant.bind(this);
+      this.addToRecipeFav = this.addToRecipeFav.bind(this);
     }
 
 //Log in details from Home page
     findUserById(id){
-      console.log("test-signin");
+      // console.log("test-signin");
       const url = "/users/"+id
       const request = new Request()
       request.get(url)
@@ -101,7 +103,22 @@ class MainContainer extends Component {
       this.setState({selectedRestaurant: restaurant})
     }
 
-
+    addToRecipeFav(recipe){
+      let newUser = this.state.user
+      const userUrl = this.state.user._links.self.href
+      const uIdLength = userUrl.length
+      const uId = userUrl.charAt(uIdLength - 2) + userUrl.charAt(uIdLength - 1)
+      {if (newUser.recipeId) {
+        newUser.recipeId.push(recipe)
+      } else {
+        newUser.recipeId = [recipe]
+      }}
+      console.log(newUser);
+      console.log(uId);
+      const request = new Request
+      request.patch('/users/'+ uId, newUser)
+      .catch(err => console.error)
+    }
 
 
 
@@ -126,7 +143,7 @@ class MainContainer extends Component {
             render={() => <InContainer user={this.state.user} recipiesList={this.state.recipiesList} findSelectedRecipe={this.findSelectedRecipe}/>}
             />
             <Route exact path="/in/recipe"
-            render={() => <InRecipeContainer user={this.state.user} selectedRecipe={this.state.selectedRecipe}/>}
+            render={() => <InRecipeContainer user={this.state.user} addToRecipeFavMain={this.addToRecipeFav} selectedRecipe={this.state.selectedRecipe}/>}
             />
             <Route exact path="/out"
             render={() => <OutContainer user={this.state.user} restaurantList={this.state.restaurantList} findSelectedRestaurant={this.findSelectedRestaurant}/>}
