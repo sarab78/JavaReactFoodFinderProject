@@ -9,6 +9,7 @@ import InContainer from './eat_in/InContainer'
 import InRecipeContainer from './eat_in/InRecipeContainer'
 import OutContainer from './eat_out/OutContainer'
 import OutRestaurantContainer from './eat_out/OutRestaurantContainer'
+import Profile from './Profile'
 import Urls from '../helpers/keys/Urls'
 import './MainContainer.css'
 
@@ -32,6 +33,7 @@ class MainContainer extends Component {
       this.findSelectedRestaurant = this.findSelectedRestaurant.bind(this);
       this.addToRecipeFav = this.addToRecipeFav.bind(this);
       this.addToRestaurantFav = this.addToRestaurantFav.bind(this);
+      this.updateProfileUser = this.updateProfileUser.bind(this);
     }
 
 //Log in details from Home page
@@ -124,7 +126,6 @@ class MainContainer extends Component {
     }
 
     addToRestaurantFav(restaurant){
-      console.log(restaurant);
       let newUser = this.state.user;
       {if (newUser.restaurantId) {
         newUser.restaurantId.push(restaurant.restaurant.id)
@@ -132,6 +133,10 @@ class MainContainer extends Component {
         newUser.restaurantId = [restaurant.restaurant.id]
       }}
       this.patchUser(newUser);
+    }
+
+    updateProfileUser(updatedUser){
+      this.patchUser(updatedUser);
     }
 
 
@@ -164,6 +169,9 @@ class MainContainer extends Component {
             />
             <Route exact path="/out/restaurant"
             render={() => <OutRestaurantContainer user={this.state.user}  selectedRestaurant={this.state.selectedRestaurant} addToRestaurantFavMain={this.addToRestaurantFav}/>}
+            />
+            <Route exact path="/profile"
+            render={() => <Profile user={this.state.user} updateUserMain={this.updateProfileUser}/>}
             />
           </Switch>
          </Router>
