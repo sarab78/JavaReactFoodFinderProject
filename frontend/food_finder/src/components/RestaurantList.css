@@ -1,0 +1,34 @@
+.restaurant-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 60vw;
+  align-items: center;
+  float: left;
+  list-style: none;
+  overflow-y: scroll;height: 120px;
+}
+
+.restaurant-scroll-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 60vw;
+  align-items: center;
+  float: left;
+  list-style: none;
+}
+
+/* .li {
+  position: absolute;
+    padding: 20px 50px 0px 30px;
+    color: rgb(116,124,142);
+    font-size: 15px;
+    overflow-y: scroll;height: 120px;
+
+} */
+
+/* nav li{height:200px; width:18%;}
+nav li{overflow:hidden; overflow-y:scroll;} */

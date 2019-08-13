@@ -1,5 +1,6 @@
 import React from 'react';
 import RestaurantItem from './RestaurantItem';
+import './RestaurantList.css'
 
 const RestaurantList = (props) => {
 
@@ -8,9 +9,11 @@ const RestaurantList = (props) => {
   }
 
     const list = props.restaurantList.map((restaurant, key) => {
-      return <li >
+      return <div className="restaurant-scroll">
+            <li >
               <RestaurantItem unit={restaurant} id={key}  findSelectedRestaurant={props.selectedRestaurant}/>
             </li>
+            </div>
     })
 
     const updateRestaurantSelection = (event) => {
@@ -18,8 +21,7 @@ const RestaurantList = (props) => {
     }
 
   return (
-      <div>
-      <h3> Your Local Restaurants</h3>
+      <div className="restaurant-list">
       <ul>
         {list}
       </ul>
