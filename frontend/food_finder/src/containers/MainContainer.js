@@ -115,6 +115,7 @@ class MainContainer extends Component {
       }}
       console.log(newUser);
       console.log(uId);
+      
       const request = new Request
       request.patch('/users/'+ uId, newUser)
       .catch(err => console.error)
