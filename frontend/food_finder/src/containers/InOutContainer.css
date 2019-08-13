@@ -1,0 +1,34 @@
+.in-out {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: red;
+  width: 75vw;
+  height: 90vh;
+  font-size: 20px;
+}
+
+.in-out-header {
+  display: flex;
+  align-content: center;
+  margin-top: 20vh;
+}
+
+.in-out-buttons {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  width: 35vw;
+  margin-top: 10vh;
+}
+
+.in-out-buttons button {
+  width: 15vw;
+  height: 10vh;
+  background-color: orange;
+  color: white;
+  font-family: 'Righteous', cursive;
+  font-size: 20px;
+}
