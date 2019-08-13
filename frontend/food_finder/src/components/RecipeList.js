@@ -1,5 +1,6 @@
 import React from 'react';
 import RecipeListItem from './RecipeListItem'
+import './RecipeList.css'
 
 const RecipeList = (props) => {
 
@@ -27,7 +28,7 @@ const recipies = props.recipiesList.map((recipe, index) => {
 
 
   return(
-  <div>
+  <div className="recipe-list">
     <h3>YOUR RECIPES</h3>
       {recipies}
       {showButton(props.selectedRecipe)}

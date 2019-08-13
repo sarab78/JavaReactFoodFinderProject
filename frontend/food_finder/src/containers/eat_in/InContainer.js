@@ -4,6 +4,7 @@ import RecipeList from '../../components/RecipeList'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import InRecipeContainer from './InRecipeContainer'
 import NavBar from '../../NavBar'
+import './InContainer.css'
 
 class InContainer extends Component {
 
@@ -37,7 +38,7 @@ class InContainer extends Component {
   render() {
     return (
 
-      <div>
+      <div className="content">
       <NavBar />
       <RecipeList recipiesList={this.props.recipiesList} findSelectedRecipe={this.props.findSelectedRecipe}/>
       </div>
