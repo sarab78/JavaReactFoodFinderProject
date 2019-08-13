@@ -38,11 +38,12 @@ class Profile extends Component {
     let favouriteRecipies = []
     console.log(recipeAPI);
     {for (let l_recipe of recipeAPI){
-        fetch(url.urlRecipe() + l_recipe)
+        fetch(url.getRecipeById(l_recipe))
         .then(res => res.json())
-        .then(recipe => this.setState({recipesFav: this.state.recipesFav.push(recipe)}))
+        .then(recipe => (favouriteRecipies.push(recipe)))
         .catch(err => console.log(err));
-    }}
+    }
+      (this.setState({recipesFav: favouriteRecipies}))}
   }
 
   updateUserMain(updatedUser) {
@@ -60,7 +61,7 @@ class Profile extends Component {
             <ProfileDetails user={this.props.user} cuisines={this.state.cuisineTypes} ingredients={this.state.ingredients} updateUserDetails={this.updateUserMain}/>
           </div>
           <div>
-            <FavRecipies user={this.props.user}/>
+            <FavRecipies user={this.props.user} recipesFav={this.state.recipesFav}/>
             {/* List of Reciepies */}
             {/* List of Restaurants */}
           </div>
