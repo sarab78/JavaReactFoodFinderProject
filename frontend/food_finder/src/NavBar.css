@@ -1,15 +1,33 @@
 .navbar {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-content: center;
   width: 75vw;
 }
 
+.navbar h3 {
+  margin-left: 5vw;
+}
+
 .navbar ul {
+  display: flex;
+  width: 10vw;
+  justify-content: space-between;
   list-style: none;
   text-decoration: none;
   align-items: center;
+  margin-right: 5vw;
+}
+
+.navbar a {
+  text-decoration: none;
+  padding: 5px;
+}
+
+.navbar a:hover{
+  color: orange;
+  background-color: white;
 }
 
 .navbar a {

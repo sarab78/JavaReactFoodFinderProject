@@ -41,10 +41,12 @@ const SignUpForm = (props) => {
         <input type="text" placeholder="Location" name="location"/>
         <label/>Please choose your favourite cuisine type
         <select name="cuisine">
+        <option disabled selected value> -- select an favourite cusine -- </option>
         {cuisineOptions}
         </select>
         <label/>Please choose your favourite main ingredient
         <select name="ingredient">
+        <option disabled selected value> -- select an favourite ingredient -- </option>
         {ingredientOptions}
         </select>
         <button type="submit">Save</button>
