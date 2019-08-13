@@ -25,10 +25,10 @@ public class User {
     private String location;
 
     @Column(name = "restaurant_id")
-    private List<String> restaurantId;
+    private ArrayList<String> restaurantId;
 
     @Column(name = "recipe_id")
-    private List<String> recipeId;
+    private ArrayList<String> recipeId;
 
 //   @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
 //    private List<CuisineType> cuisines;
@@ -102,7 +102,7 @@ public class User {
         this.location = location;
     }
 
-    public List<String> getRestaurantId() {
+    public ArrayList<String> getRestaurantId() {
         return restaurantId;
     }
 
@@ -110,7 +110,7 @@ public class User {
         this.restaurantId = restaurantId;
     }
 
-    public List<String> getRecipeId() {
+    public ArrayList<String> getRecipeId() {
         return recipeId;
     }
 
