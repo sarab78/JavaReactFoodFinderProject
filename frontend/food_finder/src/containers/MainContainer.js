@@ -10,6 +10,7 @@ import InRecipeContainer from './eat_in/InRecipeContainer'
 import OutContainer from './eat_out/OutContainer'
 import OutRestaurantContainer from './eat_out/OutRestaurantContainer'
 import Urls from '../helpers/keys/Urls'
+import './MainContainer.css'
 
 
 class MainContainer extends Component {

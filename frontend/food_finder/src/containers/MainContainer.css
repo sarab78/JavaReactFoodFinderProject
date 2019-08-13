@@ -1,0 +1,9 @@
+.main-app {
+  display: flex;
+  align-content: space-around;
+  justify-content: center;
+}
+
+.main-app h1{
+  font-size: 50px;
+}

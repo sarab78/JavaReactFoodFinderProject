@@ -1,0 +1,30 @@
+.sign-in-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sign-in-form form {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+
+}
+
+.sign-in-form form input{
+  width: 10vw;
+}
+
+.sign-in-form form button {
+  width: 10vw;
+  height: 3.5vh;
+  background-color: orange;
+  color: white;
+}
+
+.sign-in-form a button {
+  width: 10vw;
+  height: 3.5vh;
+  background-color: orange;
+  color: white;
+}
