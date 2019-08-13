@@ -1,5 +1,7 @@
 import React from 'react';
 import NavBar from '../../NavBar'
+import './OutRestaurantContainer.css'
+import {Link} from 'react-router-dom';
 
 const OutRestaurantContainer = (props) => {
 
@@ -44,24 +46,46 @@ let imageAddress = props.selectedRestaurant.restaurant.photos[startImage].photo.
 
 
   return(
-    <div>
+    <div className="restaurant-details">
       <NavBar />
 
-      <h3>{props.selectedRestaurant.restaurant.name}</h3>
-      <p>Average Cost: £{props.selectedRestaurant.restaurant.average_cost_for_two}</p>
-      <button onClick={addToRestaurantFav}>Add To My Favourites</button>
-      <img src={props.selectedRestaurant.restaurant.menu_url}></img>
-     <iframe
-       src={props.selectedRestaurant.restaurant.menu_url}
-       frameBorder="0"
-       />
+      <div className="restaurant-name">
+      <h2>{props.selectedRestaurant.restaurant.name}</h2>
+      </div>
+
+      <div className="restaurant-address">
+      <h3>{props.selectedRestaurant.restaurant.location.address}</h3>
+      </div>
+
+      <div className="restaurant-cost">
+      <p>Average Cost for two people: £{props.selectedRestaurant.restaurant.average_cost_for_two}</p>
+      </div>
+
+    <div className="restaurant-images">
      <img src={imageAddress} width="200" height="170"></img>
+     <div className="restaurant-images-buttons">
      <button onClick={previousImage}>Previous Image</button>
      <button onClick={nextImage}>Next Image</button>
+     </div>
+     </div>
+
+     <div className="restaurant-website">
+     <a href={props.selectedRestaurant.restaurant.menu_url} target="_blank">
+       <button type='button'>{props.selectedRestaurant.restaurant.name} - Click here for menu information</button>
+     </a>
+     </div>
+
+     <div className="restaurant-review">
      <h4>Reviews</h4>
      <ul>
      {reviews}
      </ul>
+     </div>
+
+     <div className="restaurant-favourites-button">
+     <button onClick={addToRestaurantFav}>Add To My Favourites</button>
+     </div>
+
     </div>
   )
 };
@@ -76,3 +100,11 @@ export default OutRestaurantContainer;
        //   width: "100%",
        //   height: "100%"
        // }}
+
+       // <div className="restaurant-menu">
+       // <img src={props.selectedRestaurant.restaurant.menu_url}></img>
+       // <iframe
+       // src={props.selectedRestaurant.restaurant.menu_url}
+       // frameBorder="0"
+       // />
+       // </div>
