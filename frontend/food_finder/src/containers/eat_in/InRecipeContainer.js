@@ -2,6 +2,7 @@ import React from 'react'
 import RecipeIngredients from '../../components/RecipeIngredients'
 import RecipeVideo from '../../components/RecipeVideo'
 import NavBar from '../../NavBar'
+import './InRecipeContainer.css'
 
 const InRecipeContainer = (props) => {
 
@@ -14,15 +15,14 @@ const InRecipeContainer = (props) => {
   }
 
   return(
-    <div className="recipe-detials">
+    <div className="recipe-details">
 
     <NavBar />
 
     <div className="recipe-name">
-    <h1>{props.selectedRecipe.strMeal}</h1>
+    <h2>{props.selectedRecipe.strMeal}</h2>
     </div>
-    <button onClick={addToRecipeFav}>Add To My Favourites</button>
-    <br/>
+
     <div className="recipe-image">
     <img src={props.selectedRecipe.strMealThumb}></img>
     </div>
@@ -37,6 +37,10 @@ const InRecipeContainer = (props) => {
     <div className="recipe-video">
     <h4>Instructional video</h4>
     <RecipeVideo selectedRecipe={props.selectedRecipe} />
+    </div>
+
+    <div className="recipe-favourites-button">
+    <button onClick={addToRecipeFav}>Add To My Favourites</button>
     </div>
 
     </div>

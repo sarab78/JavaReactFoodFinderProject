@@ -5,6 +5,7 @@ const RecipeIngredients = (props) => {
   return(
     <div className="recipe-ingredients">
     <h4>Ingredients</h4>
+    <div className="recipe-list">
     <ul>
     <li>{props.selectedRecipe.strIngredient1} - {props.selectedRecipe.strMeasure1} </li>
     <li>{props.selectedRecipe.strIngredient2} - {props.selectedRecipe.strMeasure2} </li>
@@ -16,6 +17,8 @@ const RecipeIngredients = (props) => {
     <li>{props.selectedRecipe.strIngredient8} - {props.selectedRecipe.strMeasure8} </li>
     <li>{props.selectedRecipe.strIngredient9} - {props.selectedRecipe.strMeasure9} </li>
     <li>{props.selectedRecipe.strIngredient10} - {props.selectedRecipe.strMeasure10} </li>
+    </ul>
+    <ul>
     <li>{props.selectedRecipe.strIngredient11} - {props.selectedRecipe.strMeasure11} </li>
     <li>{props.selectedRecipe.strIngredient12} - {props.selectedRecipe.strMeasure12} </li>
     <li>{props.selectedRecipe.strIngredient13} - {props.selectedRecipe.strMeasure13} </li>
@@ -27,6 +30,7 @@ const RecipeIngredients = (props) => {
     <li>{props.selectedRecipe.strIngredient19} - {props.selectedRecipe.strMeasure19} </li>
     <li>{props.selectedRecipe.strIngredient20} - {props.selectedRecipe.strMeasure20} </li>
     </ul>
+    </div>
     </div>
   )
 
