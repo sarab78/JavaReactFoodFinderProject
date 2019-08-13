@@ -1,0 +1,45 @@
+.recipe-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: red;
+  width: 75vw;
+  font-size: 20px;
+  height: auto;
+}
+
+.recipe-ingredients {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 20px;
+  width: 65vw;
+}
+
+.recipe-instructions {
+  width: 65vw;
+}
+
+.recipe-name h2 {
+  font-size: 40px;
+}
+
+.recipe-image img{
+  height: 40vh;
+  width: 40vw;
+}
+
+.recipe-video {
+  width: 65vw;
+}
+
+.recipe-favourites-button button {
+  width: 30vw;
+  height: 8vh;
+  background-color: orange;
+  color: white;
+  font-family: 'Righteous', cursive;
+  color: white;
+  font-size: 20px;
+  margin: 5vh;
+}

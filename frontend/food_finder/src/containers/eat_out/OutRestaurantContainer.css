@@ -1,0 +1,65 @@
+.restaurant-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: red;
+  width: 75vw;
+  font-size: 20px;
+  height: auto;
+}
+
+.restaurant-name h2 {
+  font-size: 40px;
+}
+
+.restaurant-favourites-button button {
+  width: 30vw;
+  height: 8vh;
+  background-color: orange;
+  color: white;
+  font-family: 'Righteous', cursive;
+  color: white;
+  font-size: 20px;
+  margin: 5vh;
+}
+
+.restaurant-images {
+  display: flex;
+  flex-direction: column;
+}
+
+.restaurant-review {
+  width: 65vw;
+}
+
+.restaurant-images img{
+  height: 40vh;
+  width: 40vw;
+}
+
+.restaurant-images-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.restaurant-images-buttons button{
+  width: 15vw;
+  height: 8vh;
+  background-color: orange;
+  color: white;
+  font-family: 'Righteous', cursive;
+  color: white;
+  font-size: 20px;
+  margin: 5vh;
+}
+
+.restaurant-website button {
+  width: 30vw;
+  height: 8vh;
+  background-color: orange;
+  color: white;
+  font-family: 'Righteous', cursive;
+  color: white;
+  font-size: 20px;
+  margin: 5vh;
+}
