@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import './InOutContainer.css'
 
 class InOutContainer extends Component{
 
@@ -17,14 +18,18 @@ class InOutContainer extends Component{
 
   render(){
     return(
-    <div>
-      <h3>Choose Your Menu</h3>
+    <div className="in-out">
+    <div className="in-out-header">
+      <h1>What is it tonight?</h1>
+    </div>
+      <div className="in-out-buttons">
         <Link to='/in'>
           <button type='button'>EAT IN</button>
         </Link>
         <Link to='/out'>
           <button type='button'>EAT OUT</button>
         </Link>
+      </div>
     </div>
   )
 };
