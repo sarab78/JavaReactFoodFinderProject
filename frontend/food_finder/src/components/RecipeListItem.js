@@ -1,4 +1,5 @@
 import React from 'react';
+import './RecipeListItem.css'
 
 
 const RecipeListItem = (props) => {
@@ -11,7 +12,7 @@ const RecipeListItem = (props) => {
   }
 
   return(
-    <div>
+    <div className="recipe-list-item">
       <img onClick={handleClick} src={props.recipe.strMealThumb} width="100" height="100"></img>
       <p onClick={handleClick}>{props.recipe.strMeal}</p>
     </div>
