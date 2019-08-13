@@ -19,9 +19,6 @@ const SignUpForm = (props) => {
       "cuisine": event.target.cuisine.value,
       "ingredient": event.target.ingredient.value
     }
-    console.log(user);
-    // console.log(cuisineChoice[0]._links.self);
-    // console.log(ingredientChoice[0]._links.self);
     props.signUpContainer(user);
   }
 
