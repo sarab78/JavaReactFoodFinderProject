@@ -159,7 +159,7 @@ class MainContainer extends Component {
             />
 
             <Route  exact path="/in"
-            render={() => <InContainer user={this.state.user} recipiesList={this.state.recipiesList} findSelectedRecipe={this.findSelectedRecipe}/>}
+            render={() => <InContainer user={this.state.user} recipiesList={this.state.recipiesList} findSelectedRecipe={this.findSelectedRecipe} selectedRecipe={this.state.selectedRecipe}/>}
             />
             <Route exact path="/in/recipe"
             render={() => <InRecipeContainer user={this.state.user} addToRecipeFavMain={this.addToRecipeFav} selectedRecipe={this.state.selectedRecipe}/>}
