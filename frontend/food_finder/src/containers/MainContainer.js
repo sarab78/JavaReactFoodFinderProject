@@ -31,6 +31,7 @@ class MainContainer extends Component {
       this.getRestaurantList = this.getRestaurantList.bind(this);
       this.findSelectedRestaurant = this.findSelectedRestaurant.bind(this);
       this.addToRecipeFav = this.addToRecipeFav.bind(this);
+      this.addToRestaurantFav = this.addToRestaurantFav.bind(this);
     }
 
 //Log in details from Home page
@@ -103,22 +104,34 @@ class MainContainer extends Component {
       this.setState({selectedRestaurant: restaurant})
     }
 
-    addToRecipeFav(recipe){
-      let newUser = this.state.user
+    patchUser(updatedUser){
       const userUrl = this.state.user._links.self.href
       const uIdLength = userUrl.length
       const uId = userUrl.charAt(uIdLength - 2) + userUrl.charAt(uIdLength - 1)
+      const request = new Request
+      request.patch('/users/'+ uId, updatedUser)
+      .catch(err => console.error)
+    }
+
+    addToRecipeFav(recipe){
+      let newUser = this.state.user
       {if (newUser.recipeId) {
         newUser.recipeId.push(recipe.idMeal)
       } else {
         newUser.recipeId = [recipe.idMeal]
       }}
-      console.log(newUser);
-      console.log(uId);
+      this.patchUser(newUser);
+    }
 
-      const request = new Request
-      request.patch('/users/'+ uId, newUser)
-      .catch(err => console.error)
+    addToRestaurantFav(restaurant){
+      console.log(restaurant);
+      let newUser = this.state.user;
+      {if (newUser.restaurantId) {
+        newUser.restaurantId.push(restaurant.restaurant.id)
+      } else {
+        newUser.restaurantId = [restaurant.restaurant.id]
+      }}
+      this.patchUser(newUser);
     }
 
 
@@ -150,7 +163,7 @@ class MainContainer extends Component {
             render={() => <OutContainer user={this.state.user} restaurantList={this.state.restaurantList} findSelectedRestaurant={this.findSelectedRestaurant}/>}
             />
             <Route exact path="/out/restaurant"
-            render={() => <OutRestaurantContainer user={this.state.user}  selectedRestaurant={this.state.selectedRestaurant}/>}
+            render={() => <OutRestaurantContainer user={this.state.user}  selectedRestaurant={this.state.selectedRestaurant} addToRestaurantFavMain={this.addToRestaurantFav}/>}
             />
           </Switch>
          </Router>
