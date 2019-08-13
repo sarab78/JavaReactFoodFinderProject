@@ -96,6 +96,9 @@ public class DataLoader implements ApplicationRunner {
         User user2 = new User("Danny", "Smith", "Glasgow", cuisineType2,ingredient1);
         userRepoistory.save(user2);
 
+        User user3 = new User("Bobby", "Greenwood", "Renfrew", cuisineType1, ingredient4);
+        userRepoistory.save(user3);
+
         user1.setIngredient(ingredient1);
         user1.setCuisine(cuisineType1);
         userRepoistory.save(user1);
@@ -110,7 +113,18 @@ public class DataLoader implements ApplicationRunner {
         cuisineType2.addUser(user2);
         cuisineTypeRepository.save(cuisineType2);
 
+        user1.addRecipe("12");
+        userRepoistory.save(user1);
 
+        user2.addRecipe("10");
+        userRepoistory.save(user2);
+
+        user1.addRestaurant("TH");
+        user1.addRestaurant("BK");
+        userRepoistory.save(user1);
+
+        user2.addRestaurant("BK");
+        userRepoistory.save(user2);
 
     }
 
