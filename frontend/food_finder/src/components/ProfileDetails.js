@@ -30,14 +30,17 @@ const ProfileDetails = (props) => {
           <input type="text" value={props.firstName} name="firstName"/>
           <input type="text" value={props.lastName} name="lastName"/>
           <input type="text" value={props.location} name="location"/>
+          <br/>
           <label/>Please choose your favourite cuisine type
           <select name="cuisine">
           {cuisineOptions}
           </select>
+          <br/>
           <label/>Please choose your favourite main ingredient
           <select name="ingredient">
           {ingredientOptions}
           </select>
+          <br/>
           <button type="submit">Save</button>
         </form>
       </div>
