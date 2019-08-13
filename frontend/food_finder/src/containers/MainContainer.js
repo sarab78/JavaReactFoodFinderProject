@@ -109,13 +109,13 @@ class MainContainer extends Component {
       const uIdLength = userUrl.length
       const uId = userUrl.charAt(uIdLength - 2) + userUrl.charAt(uIdLength - 1)
       {if (newUser.recipeId) {
-        newUser.recipeId.push(recipe)
+        newUser.recipeId.push(recipe.idMeal)
       } else {
-        newUser.recipeId = [recipe]
+        newUser.recipeId = [recipe.idMeal]
       }}
       console.log(newUser);
       console.log(uId);
-      
+
       const request = new Request
       request.patch('/users/'+ uId, newUser)
       .catch(err => console.error)
