@@ -11,7 +11,7 @@ public interface EmbedCuisineTypes {
     Long getId();
     String getName();
     int getCuisine_id();
-    List<User> getUsers();
+//    List<User> getUsers();
 
 
 }
