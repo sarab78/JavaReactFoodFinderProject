@@ -1,4 +1,5 @@
 import React from 'react';
+import NavBar from '../../NavBar'
 
 const OutRestaurantContainer = (props) => {
 
@@ -37,11 +38,18 @@ imageAddress = props.selectedRestaurant.restaurant.photos[startImage].photo.url 
 
 let imageAddress = props.selectedRestaurant.restaurant.photos[startImage].photo.url;
 
+  const addToRestaurantFav = () => {
+    props.addToRestaurantFavMain(props.selectedRestaurant)
+  }
+
 
   return(
     <div>
+      <NavBar />
+
       <h3>{props.selectedRestaurant.restaurant.name}</h3>
       <p>Average Cost: £{props.selectedRestaurant.restaurant.average_cost_for_two}</p>
+      <button onClick={addToRestaurantFav}>Add To My Favourites</button>
       <img src={props.selectedRestaurant.restaurant.menu_url}></img>
      <iframe
        src={props.selectedRestaurant.restaurant.menu_url}
