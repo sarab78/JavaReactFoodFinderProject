@@ -15,21 +15,21 @@ const SignUpForm = (props) => {
       "firstName": event.target.firstName.value,
       "lastName": event.target.lastName.value,
       "location": event.target.location.value,
-      "cuisine": cuisineChoice[0]._links.self,
-      "ingredient": ingredientChoice[0]._links.self
+      "cuisine": event.target.cuisine.value,
+      "ingredient": event.target.ingredient.value
     }
     console.log(user);
-    console.log(cuisineChoice[0]._links.self);
-    console.log(ingredientChoice[0]._links.self);
+    // console.log(cuisineChoice[0]._links.self);
+    // console.log(ingredientChoice[0]._links.self);
     props.signUpContainer(user);
   }
 
   const cuisineOptions = props.cuisineTypes.map((cuisine, index) => {
-    return <option type="option" name="cuisines" key={index} value={index}>{cuisine.name}</option>
+    return <option type="option" name="cuisines" key={index} value={cuisine._links.self.href}>{cuisine.name}</option>
     console.log(cuisine);
   })
   const ingredientOptions = props.ingredients.map((ingredient, index) => {
-    return <option type="option" name="ingredients" key={index} value={index}>{ingredient.name}</option>
+    return <option type="option" name="ingredients" key={index} value={ingredient._links.self.href}>{ingredient.name}</option>
   })
 
 
