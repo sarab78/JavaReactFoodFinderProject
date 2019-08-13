@@ -1,4 +1,5 @@
 import React from 'react';
+import './SignUpForm.css'
 
 const SignUpForm = (props) => {
 
@@ -36,24 +37,19 @@ const SignUpForm = (props) => {
 
 
   return(
-    <div>
+    <div className="sign-up-form">
       <form onSubmit={handleSubmit}>
         <input type="text" placeholder="First Name" name="firstName"/>
         <input type="text" placeholder="Last Name" name="lastName"/>
         <input type="text" placeholder="Location" name="location"/>
-        <br/>
         <label/>Please choose your favourite cuisine type
-        <br/>
         <select name="cuisine">
         {cuisineOptions}
         </select>
-        <br/>
         <label/>Please choose your favourite main ingredient
-        <br/>
         <select name="ingredient">
         {ingredientOptions}
         </select>
-        <br/>
         <button type="submit">Save</button>
       </form>
     </div>

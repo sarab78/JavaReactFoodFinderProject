@@ -26,7 +26,7 @@ setRedirect(){
 renderRedirect(){
  if (this.state.redirect) {
    return <Link to='/in-out'>
-            <button type="button">Start choosing!</button>
+            <button type="button">Go!</button>
          </Link>
  }
 }
@@ -37,7 +37,9 @@ render(){
    <input type="number" placeholder="Please enter your user id" name="id" required/>
    <button type="submit" onClick={this.setRedirect}>Sign in</button>
    </form>
+   <div className="sign-in-redirect">
     {this.renderRedirect()}
+    </div>  
    </div>
  )
 }

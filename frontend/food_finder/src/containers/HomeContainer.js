@@ -24,10 +24,12 @@ class HomeContainer extends Component {
         <div className="home-content">
         <div className="content">
           <h1>D-In or Out!</h1>
+        <div className="home-text">
           <p>Never know what to do for food each day? </p>
           <p>Always in two minds about wether to dine in or dine out? </p>
           <p>Why not let D-In or Out take the hassle out of decision making and suggest what you can do for dinner tonight!</p>
           <p>Enter your user number or click sign up to get started!</p>
+        </div>
         <div className="options">
         <div className="sign-in">
           <SignIn handleSignIn={this.findUserByIdHome}/>
