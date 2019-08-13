@@ -1,6 +1,7 @@
 import React from 'react';
 import RecipeListItem from './RecipeListItem'
 import './RecipeList.css'
+import {Link} from 'react-router-dom';
 
 const RecipeList = (props) => {
 
@@ -9,12 +10,12 @@ const RecipeList = (props) => {
 }
 
 
-function showButton(checkRecipeSelected) {
-   if(!checkRecipeSelected) return null;
+function showButton() {
+   if(!props.selectedRecipe) return null;
    return (
-      <div>
-        <h1>Click me!</h1>
-      </div>
+     <Link to='/in/recipe'>
+     <button type="button">Take me to this recipe!</button>
+     </Link>
    )
 }
 
@@ -29,9 +30,9 @@ const recipies = props.recipiesList.map((recipe, index) => {
 
   return(
   <div className="recipe-list">
-    <h3>YOUR RECIPES</h3>
+    
       {recipies}
-      {showButton(props.selectedRecipe)}
+      {showButton()}
   </div>
 )
 };
