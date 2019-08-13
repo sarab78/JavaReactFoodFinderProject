@@ -2,29 +2,38 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 20px;
 }
 
 .sign-in-form form {
   flex-direction: column;
   display: flex;
   align-items: center;
-
+  font-family: 'Righteous', cursive;
+  font-size: 20px;
+  text-align-last:center;
 }
 
 .sign-in-form form input{
-  width: 10vw;
+  width: 15vw;
+  font-family: 'Righteous', cursive;
+
 }
 
 .sign-in-form form button {
-  width: 10vw;
-  height: 3.5vh;
+  width: 15vw;
+  height: 5vh;
   background-color: orange;
   color: white;
+  font-family: 'Righteous', cursive;
+  font-size: 20px;
 }
 
 .sign-in-form a button {
-  width: 10vw;
-  height: 3.5vh;
+  width: 15vw;
+  height: 5vh;
   background-color: orange;
   color: white;
+  font-family: 'Righteous', cursive;
+  font-size: 20px;
 }
