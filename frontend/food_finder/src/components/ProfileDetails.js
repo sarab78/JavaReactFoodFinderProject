@@ -1,4 +1,5 @@
 import React from 'react';
+import './ProfileDetail.css'
 
 const ProfileDetails = (props) => {
 
@@ -24,22 +25,25 @@ const ProfileDetails = (props) => {
 
 
   return(
-  <div>
-      <div>
+  <div className="profileform">
+      <div className="profile-form">
         <form onSubmit={handleSubmit}>
-          <input type="text" value={props.firstName} name="firstName"/>
-          <input type="text" value={props.lastName} name="lastName"/>
-          <input type="text" value={props.location} name="location"/>
+          <input id="profile-initial" type="text" value={props.user.firstName} name="firstName"/>
+          <input id="profile-initial" type="text" value={props.user.lastName} name="lastName"/>
+          <input id="profile-initial" type="text" value={props.user.location} name="location"/>
           <br/>
-          <label/>Please choose your favourite cuisine type
+          <br/>
+          <label/>Your favoured cuisine type:
           <select name="cuisine">
           {cuisineOptions}
           </select>
           <br/>
-          <label/>Please choose your favourite main ingredient
+          <br/>
+          <label/>Your favoured main ingredient:
           <select name="ingredient">
           {ingredientOptions}
           </select>
+          <br/>
           <br/>
           <button type="submit">Save</button>
         </form>

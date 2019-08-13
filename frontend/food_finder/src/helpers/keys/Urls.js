@@ -25,6 +25,10 @@ class Urls{
       return 'https://developers.zomato.com/api/v2.1/search?entity_id=77&entity_type=city&count=20&apikey=57d965e80aa4daf08b992fdc63f2c7bc&cuisines='
     }
 
+    urlRestaurantById(id){
+      return 'https://developers.zomato.com/api/v2.1/restaurant?apikey=57d965e80aa4daf08b992fdc63f2c7bc&res_id=' + id
+    }
+
 }
 
 
