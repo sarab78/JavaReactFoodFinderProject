@@ -30,7 +30,7 @@ const recipies = props.recipiesList.map((recipe, index) => {
 
   return(
   <div className="recipe-list">
-    <h3>YOUR RECIPES</h3>
+    
       {recipies}
       {showButton()}
   </div>
