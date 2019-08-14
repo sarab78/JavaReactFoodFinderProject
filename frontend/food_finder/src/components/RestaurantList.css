@@ -1,6 +1,7 @@
 .restaurant-list-container {
   display: flex;
   flex-direction: column;
+  height: 100vh;
 }
 
 .restaurant-list {
@@ -13,26 +14,38 @@
 
 }
 
+/* .restaurant-scroll li{
+  width: 25vw;
+} */
+
 .restaurant-list ul{
   display: flex;
   list-style: none;
   flex-direction: row;
-  flex-wrap: wrap;
-  overflow-y: scroll;height: 50vh;
+  flex-flow: row wrap;
+  overflow-y: scroll;height: 40vh;
   background-color: orange;
+  justify-content: space-around;
 }
 
 .restaurant-item {
+  width: 20vw;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  width: 25vw;
+}
+
+.restaurant-item img{
+  height: 12vh;
+  width: 9vw;
+}
+
+.restaurant-item p {
+  margin-left: 10px;
 }
 
 .restaurant-button {
   display: flex;
   justify-content: center;
-  margin-bottom: 5vh;
 }
 
 .restaurant-button button {
@@ -50,28 +63,3 @@
   color: orange;
   background-color: white;
 }
-
-/* .restaurant-list {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 60vw;
-  align-items: center;
-  float: left;
-  list-style: none;
-} */
-
-
-
-/* .li {
-  position: absolute;
-    padding: 20px 50px 0px 30px;
-    color: rgb(116,124,142);
-    font-size: 15px;
-    overflow-y: scroll;height: 120px;
-
-} */
-
-/* nav li{height:200px; width:18%;}
-nav li{overflow:hidden; overflow-y:scroll;} */

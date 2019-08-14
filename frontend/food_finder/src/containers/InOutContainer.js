@@ -22,7 +22,8 @@ class InOutContainer extends Component{
     <div className="in-out">
     <NavBar/>
     <div className="in-out-header">
-      <h1>What is it tonight?</h1>
+      <h1>What is it tonight</h1>
+      <h1>{this.props.user.firstName}?</h1>
     </div>
       <div className="in-out-buttons">
         <Link to='/in'>

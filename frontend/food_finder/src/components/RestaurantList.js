@@ -20,11 +20,11 @@ const RestaurantList = (props) => {
   }
 
     const list = props.restaurantList.map((restaurant, key) => {
-      return <div className="restaurant-scroll">
-            <li >
+      return(
+            <li>
               <RestaurantItem unit={restaurant} id={key}  findSelectedRestaurant={props.selectedRestaurant} showButton={showButton}/>
             </li>
-            </div>
+          )
     })
 
     const updateRestaurantSelection = (event) => {

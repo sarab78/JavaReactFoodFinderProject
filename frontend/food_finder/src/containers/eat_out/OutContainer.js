@@ -9,7 +9,7 @@ class OutContainer extends Component {
 
   render() {
     return (
-      <div className="content">
+      <div className="out-content">
       <NavBar />
         <h3> Your Local {this.props.user._embedded.cuisine.name} Restaurants</h3>
         <RestaurantList restaurantList={this.props.restaurantList} selectedRestaurant={this.props.findSelectedRestaurant} selectedRestaurantInfo={this.props.selectedRestaurant}/>

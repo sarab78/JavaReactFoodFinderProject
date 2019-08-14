@@ -5,7 +5,7 @@ import './NavBar.css'
 const NavBar = (props) => {
   return (
     <nav className="navbar">
-      <h3>D-In or Out</h3>
+      <h3>Din or Out?</h3>
       <ul>
 
         <li className="navLink">
