@@ -1,16 +1,52 @@
-.restaurant-list {
+.restaurant-list-container {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 60vw;
-  align-items: center;
-  float: left;
-  list-style: none;
-  overflow-y: scroll;height: 120px;
+  flex-direction: column;
 }
 
-.restaurant-scroll-list {
+.restaurant-list {
+  display: flex;
+  justify-content: center;
+  width: 60vw;
+  align-items: center;
+  float: left;
+  list-style: none;
+
+}
+
+.restaurant-list ul{
+  display: flex;
+  list-style: none;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow-y: scroll;height: 50vh;
+  background-color: orange;
+}
+
+.restaurant-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 25vw;
+}
+
+.restaurant-button {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5vh;
+}
+
+.restaurant-button button {
+  width: 30vw;
+  height: 8vh;
+  background-color: orange;
+  color: white;
+  font-family: 'Righteous', cursive;
+  color: white;
+  font-size: 20px;
+  margin: 5vh;
+}
+
+/* .restaurant-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -19,7 +55,9 @@
   align-items: center;
   float: left;
   list-style: none;
-}
+} */
+
+
 
 /* .li {
   position: absolute;
