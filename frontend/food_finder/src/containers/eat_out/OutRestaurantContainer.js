@@ -64,8 +64,7 @@ let imageAddress = props.selectedRestaurant.restaurant.photos[startImage].photo.
     <div className="restaurant-images">
      <img src={imageAddress} width="200" height="170"></img>
      <div className="restaurant-images-buttons">
-     <button onClick={previousImage}>Previous Image</button>
-     <button onClick={nextImage}>Next Image</button>
+
      </div>
      </div>
 
@@ -108,3 +107,6 @@ export default OutRestaurantContainer;
        // frameBorder="0"
        // />
        // </div>
+     // 
+     // <button onClick={previousImage}>Previous Image</button>
+     // <button onClick={nextImage}>Next Image</button>
