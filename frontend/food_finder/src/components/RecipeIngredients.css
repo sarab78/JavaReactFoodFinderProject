@@ -1,0 +1,11 @@
+.recipe-ingredients {
+  background-color: red;
+  display:inline-flex;
+  flex-direction: row;
+  justify-content: left;
+  width: 55vw;
+  float: left;
+  list-style: none;
+  overflow-y: scroll;height: 180px;
+
+}
