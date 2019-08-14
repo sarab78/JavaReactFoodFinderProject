@@ -41,7 +41,7 @@ class InContainer extends Component {
       <div className="content">
       <NavBar />
       <h3>Your {this.props.user._embedded.ingredient.name} Recipes</h3>
-      <RecipeList recipiesList={this.props.recipiesList} findSelectedRecipe={this.props.findSelectedRecipe} selectedRecipe={this.props.selectedRecipe}/>
+      <RecipeList recipiesList={this.props.recipiesList} findSelectedRecipe={this.props.findSelectedRecipe} selectedRecipe={this.props.selectedRecipe} findRandomRecipe={this.props.findRandomRecipe}/>
       </div>
     );
   }
