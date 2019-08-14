@@ -39,7 +39,10 @@ const SignUpForm = (props) => {
       <form onSubmit={handleSubmit}>
         <input type="text" placeholder="First Name" name="firstName"/>
         <input type="text" placeholder="Last Name" name="lastName"/>
-        <input type="text" placeholder="Location" name="location"/>
+        <select name="location">
+          <option disabled selected value> -- Location -- </option>
+          <option name="location">Glasgow</option>
+        </select>
         <label/>Please choose your favourite cuisine type
         <select name="cuisine">
         <option disabled selected value> -- select an favourite cusine -- </option>
@@ -57,3 +60,5 @@ const SignUpForm = (props) => {
 };
 
 export default SignUpForm;
+
+        // <input type="text" placeholder="Location" name="location"/>

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import NavBar from '../NavBar'
 import './InOutContainer.css'
 
 class InOutContainer extends Component{
@@ -19,6 +20,7 @@ class InOutContainer extends Component{
   render(){
     return(
     <div className="in-out">
+    <NavBar/>
     <div className="in-out-header">
       <h1>What is it tonight?</h1>
     </div>

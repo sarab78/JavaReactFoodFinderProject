@@ -4,6 +4,7 @@ import FavRecipies from '../components/FavRecipies'
 import FavRestaurants from '../components/FavRestaurants'
 import Request from '../helpers/Request'
 import Urls from '../helpers/keys/Urls'
+import NavBar from '../NavBar'
 import './Profile.css'
 
 class Profile extends Component {
@@ -74,6 +75,7 @@ class Profile extends Component {
   render() {
     return (
       <div className="profile">
+          <NavBar/>
           <div>
               <h3>Your Profile</h3>
           </div>
