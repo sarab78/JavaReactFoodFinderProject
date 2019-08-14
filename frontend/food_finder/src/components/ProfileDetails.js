@@ -35,12 +35,14 @@ const ProfileDetails = (props) => {
           <br/>
           <label/>Your favoured cuisine type:
           <select name="cuisine">
+            <option disabled selected value>{props.user._embedded.cuisine.name}</option>
           {cuisineOptions}
           </select>
           <br/>
           <br/>
           <label/>Your favoured main ingredient:
           <select name="ingredient">
+            <option disabled selected value>{props.user._embedded.ingredient.name}</option>
           {ingredientOptions}
           </select>
           <br/>
