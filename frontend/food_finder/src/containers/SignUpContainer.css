@@ -10,3 +10,13 @@
 .sign-up-content form {
   height: 60vh;
 }
+
+
+.in-out-redirect button{
+  width: 15vw;
+  height: 10vh;
+  background-color: orange;
+  color: white;
+  font-family: 'Righteous', cursive;
+  font-size: 20px;
+}
