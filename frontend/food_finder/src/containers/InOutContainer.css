@@ -32,3 +32,8 @@
   font-family: 'Righteous', cursive;
   font-size: 20px;
 }
+
+.in-out-buttons button:hover{
+  color: orange;
+  background-color: white;
+}

@@ -30,6 +30,10 @@
   background-color: orange;
   color: white;
   font-family: 'Righteous', cursive;
-  color: white;
   font-size: 20px;
+}
+
+.sign-up-form button:hover{
+  color: orange;
+  background-color: white;
 }

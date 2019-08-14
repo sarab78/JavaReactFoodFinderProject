@@ -46,6 +46,11 @@
   margin: 5vh;
 }
 
+.restaurant-button button:hover{
+  color: orange;
+  background-color: white;
+}
+
 /* .restaurant-list {
   display: flex;
   flex-direction: row;

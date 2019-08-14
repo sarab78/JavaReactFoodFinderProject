@@ -33,7 +33,14 @@
   width: 15vw;
   height: 5vh;
   background-color: orange;
+  color: orange;
   color: white;
   font-family: 'Righteous', cursive;
   font-size: 20px;
+
+}
+
+.sign-in-form  button:hover{
+  color: orange;
+  background-color: white;
 }

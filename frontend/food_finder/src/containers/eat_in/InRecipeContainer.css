@@ -43,3 +43,8 @@
   font-size: 20px;
   margin: 5vh;
 }
+
+.recipe-favourites-button button:hover{
+  color: orange;
+  background-color: white;
+}
