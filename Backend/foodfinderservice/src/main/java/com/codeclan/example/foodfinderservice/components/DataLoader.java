@@ -29,33 +29,33 @@ public class DataLoader implements ApplicationRunner {
 
 
 
-        Ingredient ingredient1 = new Ingredient("Cucumber");
+        Ingredient ingredient1 = new Ingredient("Bacon");
         ingredientRepository.save(ingredient1);
 
         Ingredient ingredient2 = new Ingredient("Chicken");
         ingredientRepository.save(ingredient2);
 
-        Ingredient ingredient3 = new Ingredient("Cheese");
+        Ingredient ingredient3 = new Ingredient("Beef");
         ingredientRepository.save(ingredient3);
 
-        Ingredient ingredient4 = new Ingredient("Pasta");
+        Ingredient ingredient4 = new Ingredient("Sausages");
         ingredientRepository.save(ingredient4);
 
-        Ingredient ingredient5 = new Ingredient("Noodles");
+        Ingredient ingredient5 = new Ingredient("Pork");
         ingredientRepository.save(ingredient5);
 
         Ingredient ingredient6 = new Ingredient("Eggs");
         ingredientRepository.save(ingredient6);
 
-        Ingredient ingredient7 = new Ingredient("Cream");
+        Ingredient ingredient7 = new Ingredient("Garlic");
         ingredientRepository.save(ingredient7);
 
-        Ingredient ingredient8 = new Ingredient("Rice");
+        Ingredient ingredient8 = new Ingredient("Tomato");
         ingredientRepository.save(ingredient8);
 
-        Ingredient ingredient9 = new Ingredient("Meat");
+        Ingredient ingredient9 = new Ingredient("Onion");
         ingredientRepository.save(ingredient9);
-
+        
         Ingredient ingredient10 = new Ingredient("Butter");
         ingredientRepository.save(ingredient10);
 

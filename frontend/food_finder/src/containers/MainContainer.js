@@ -151,7 +151,7 @@ class MainContainer extends Component {
             render={() => <HomeContainer findUserByIdMain={this.findUserById} switchToSignUpContainer={this.viewNew}/>}
             />
             <Route exact path="/new"
-            render={() => <SignUpContainer signUpMain={this.createNewUser} />}
+            render={() => <SignUpContainer signUpMain={this.createNewUser} user={this.state.user}/>}
             />
                         {/* change above address to have user id */}
             <Route exact path="/in-out"

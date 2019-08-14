@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import SignUpForm from '../components/SignUpForm'
 import Request from '../helpers/Request'
 import './SignUpContainer.css'
+import {Link} from 'react-router-dom';
 
 class SignUpContainer extends Component {
 
@@ -12,6 +13,7 @@ class SignUpContainer extends Component {
       ingredients: []
     }
     this.createNewUser = this.createNewUser.bind(this);
+    this.showButton = this.showButton.bind(this)
   }
 
   componentDidMount(){
@@ -49,6 +51,17 @@ class SignUpContainer extends Component {
       this.props.signUpMain(user);
   }
 
+    showButton() {
+     if(!this.props.user) return null;
+     return (
+       <div className = "in-out-redirect">
+       <Link to='/in-out'>
+       <button type="button">Go!</button>
+       </Link>
+       </div>
+     )
+  }
+
 // Pull ingredients and cuisine from db as list as pass as props to Form
 
   render(){
@@ -56,7 +69,8 @@ class SignUpContainer extends Component {
         <div className="sign-up-content">
           <h1>D-In or Out</h1>
           <p>Please sign up to our service below</p>
-          <SignUpForm signUpContainer={this.createNewUser} cuisineTypes={this.state.cuisineTypes} ingredients={this.state.ingredients}/>
+          <SignUpForm signUpContainer={this.createNewUser} cuisineTypes={this.state.cuisineTypes} ingredients={this.state.ingredients} redirectButton={this.showButton}/>
+          {this.showButton()}
         </div>
     )
   }
