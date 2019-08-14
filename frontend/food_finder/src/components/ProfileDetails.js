@@ -30,7 +30,7 @@ const ProfileDetails = (props) => {
         <form onSubmit={handleSubmit}>
           <input id="profile-initial" type="text" value={props.user.firstName} name="firstName"/>
           <input id="profile-initial" type="text" value={props.user.lastName} name="lastName"/>
-          <input id="profile-initial" type="text" value={props.user.location} name="location"/>
+          <input id="profile-initial" type="text" placeholder={props.user.location} name="location"/>
           <br/>
           <br/>
           <label/>Your favoured cuisine type:

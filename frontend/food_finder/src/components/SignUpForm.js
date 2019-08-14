@@ -20,6 +20,7 @@ const SignUpForm = (props) => {
       "ingredient": event.target.ingredient.value
     }
     props.signUpContainer(user);
+    window.location = ('/home');
   }
 
   const cuisineOptions = props.cuisineTypes.map((cuisine, index) => {
