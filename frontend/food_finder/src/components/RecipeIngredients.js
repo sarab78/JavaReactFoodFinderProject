@@ -1,11 +1,11 @@
 import React from 'react'
+import './RecipeIngredients.css'
 
 const RecipeIngredients = (props) => {
 
   return(
     <div className="recipe-ingredients">
-    <h4>Ingredients</h4>
-    <div className="recipe-list">
+    <h3>Ingredients</h3>
     <ul>
     <li>{props.selectedRecipe.strIngredient1} - {props.selectedRecipe.strMeasure1} </li>
     <li>{props.selectedRecipe.strIngredient2} - {props.selectedRecipe.strMeasure2} </li>
@@ -31,7 +31,7 @@ const RecipeIngredients = (props) => {
     <li>{props.selectedRecipe.strIngredient20} - {props.selectedRecipe.strMeasure20} </li>
     </ul>
     </div>
-    </div>
+  
   )
 
 }
