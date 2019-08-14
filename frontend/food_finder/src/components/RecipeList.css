@@ -1,11 +1,42 @@
 .recipe-list {
   display: flex;
-  flex-direction: row;
-  flex-flow: row wrap;
   justify-content: center;
   width: 60vw;
   align-items: center;
   float: left;
   list-style: none;
+  background-color: orange;
+
 
 }
+
+.recipe-list ul{
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+  overflow-y: scroll;height: 250px;
+  list-style: none;
+}
+ .recipe-list-item{
+   width: 25vw;
+ }
+
+ .recipe-list-container{
+   display: flex;
+   flex-direction: column;
+ }
+
+ .recipe-button{
+   display: flex;
+   justify-content: center;
+ }
+ .recipe-button button {
+   width: 30vw;
+   height: 8vh;
+   background-color: orange;
+   color: white;
+   font-family: 'Righteous', cursive;
+   color: white;
+   font-size: 20px;
+   margin: 5vh;
+ }

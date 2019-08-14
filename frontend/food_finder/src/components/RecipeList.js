@@ -29,10 +29,18 @@ const recipies = props.recipiesList.map((recipe, index) => {
 
 
   return(
-  <div className="recipe-list">
-      {recipies}
-      {showButton()}
-  </div>
+    <div className="recipe-list-container">
+    <div className="recipe-list">
+    <ul>
+    {recipies}
+    </ul>
+    </div>
+    <div className="recipe-button">
+    {showButton()}
+
+
+    </div>
+    </div>
 )
 };
 
