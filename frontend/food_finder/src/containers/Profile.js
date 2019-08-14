@@ -25,9 +25,13 @@ class Profile extends Component {
       const promise1 = request.get('/cuisineTypes');
       const promise2 = request.get('/ingredients');
       const promises = [promise1, promise2]
+      // const checkRecipeAPI = this.props.user.recipeId
+      // const checkRestaurantAPI = this.props.user.restaurantId
 
       const recipeAPI = this.props.user.recipeId;
+
       const restaurantAPI = this.props.user.restaurantId;
+
 
       Promise.all(promises).then((data) => {
         this.setState({
@@ -37,6 +41,8 @@ class Profile extends Component {
       })
 
       let favouriteRecipies = [];
+      if (!this.props.user.recipeId) {
+      return null } else {
       {for (let l_recipe of recipeAPI){
           fetch(url.getRecipeById(l_recipe))
           .then(res => res.json())
@@ -44,8 +50,11 @@ class Profile extends Component {
           .catch(err => console.log(err));
       }
         (this.setState({recipesFav: favouriteRecipies}))}
+      }
 
       let favouriteRestaurants = [];
+      if (!this.props.user.restaurantId) {
+        return null } else {
       {for (let l_restaurant of restaurantAPI){
          fetch(url.urlRestaurantById(l_restaurant))
         .then(res => res.json())
@@ -53,8 +62,8 @@ class Profile extends Component {
           .then(result => console.log(result))
         .catch(err => console.log(err));
       }
-        console.log(favouriteRestaurants);
         (this.setState({restaurantFav: favouriteRestaurants}));}
+      }
   }
 
   updateUserMain(updatedUser) {

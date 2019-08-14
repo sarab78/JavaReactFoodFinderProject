@@ -4,7 +4,8 @@ import React from 'react';
 
 const FavRecipies = (props) => {
 
-  const userRecipes = props.recipesFav.map((recipe, index) => {
+  const userRecipes =
+    props.recipesFav.map((recipe, index) => {
     {if (recipe.meals){
       return  <div>
               <li onClick={console.log('Holy Moley')}>
@@ -14,6 +15,7 @@ const FavRecipies = (props) => {
            </div>
         }}
   })
+
 
 
   return (
