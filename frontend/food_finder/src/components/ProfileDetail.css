@@ -1,0 +1,35 @@
+.profileform{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  width: 45vw;
+  margin-bottom: 8vh;
+  font-family: 'Righteous', cursive;
+  font-size: 20px;
+}
+
+.profile-form form input{
+    width: 30vw;
+    text-align-last:center;
+    font-family: 'Righteous', cursive;
+    font-size: 20px;
+}
+
+.profile-form form select{
+    width: 30vw;
+    text-align-last:center;
+    font-family: 'Righteous', cursive;
+    font-size: 20px;
+}
+
+.profile-form button {
+  width: 30vw;
+  height: 8vh;
+  background-color: orange;
+  color: white;
+  font-family: 'Righteous', cursive;
+  color: white;
+  font-size: 20px;
+}

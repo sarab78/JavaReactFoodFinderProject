@@ -28,7 +28,7 @@ class HomeContainer extends Component {
           <p>Never know what to do for food each day? </p>
           <p>Always in two minds about wether to dine in or dine out? </p>
           <p>Why not let D-In or Out take the hassle out of decision making and suggest what you can do for dinner tonight!</p>
-          <p>Enter your user number or click sign up to get started!</p>
+          <p>Enter your user id or click sign up to get started!</p>
         </div>
         <div className="options">
         <div className="sign-in">

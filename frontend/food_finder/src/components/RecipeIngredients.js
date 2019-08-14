@@ -17,6 +17,8 @@ const RecipeIngredients = (props) => {
     <li>{props.selectedRecipe.strIngredient8} - {props.selectedRecipe.strMeasure8} </li>
     <li>{props.selectedRecipe.strIngredient9} - {props.selectedRecipe.strMeasure9} </li>
     <li>{props.selectedRecipe.strIngredient10} - {props.selectedRecipe.strMeasure10} </li>
+    </ul>
+    <ul>
     <li>{props.selectedRecipe.strIngredient11} - {props.selectedRecipe.strMeasure11} </li>
     <li>{props.selectedRecipe.strIngredient12} - {props.selectedRecipe.strMeasure12} </li>
     <li>{props.selectedRecipe.strIngredient13} - {props.selectedRecipe.strMeasure13} </li>
@@ -29,6 +31,7 @@ const RecipeIngredients = (props) => {
     <li>{props.selectedRecipe.strIngredient20} - {props.selectedRecipe.strMeasure20} </li>
     </ul>
     </div>
+  
   )
 
 }
