@@ -9,9 +9,9 @@ const RestaurantItem = (props) => {
   }
 
   return(
-      <div>
-          <p onClick={handleClick}>{props.unit.restaurant.name}</p>
+      <div className="restaurant-item">
           <img onClick={handleClick} src={props.unit.restaurant.featured_image} height="60" width="60"></img>
+          <p onClick={handleClick}>{props.unit.restaurant.name}</p>
       </div>
     )
 };
