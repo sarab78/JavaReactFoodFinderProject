@@ -162,7 +162,6 @@ class MainContainer extends Component {
             <Route exact path="/new"
             render={() => <SignUpContainer signUpMain={this.createNewUser} user={this.state.user}/>}
             />
-                        {/* change above address to have user id */}
             <Route exact path="/in-out"
             render={() => <InOutContainer user={this.state.user} getRecipeList={this.getRecipeList} getRestaurantList={this.getRestaurantList}/>}
             />

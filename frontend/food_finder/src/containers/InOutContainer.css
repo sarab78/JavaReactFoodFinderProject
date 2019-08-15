@@ -10,8 +10,10 @@
 
 .in-out-header {
   display: flex;
+  flex-direction: column;
   align-content: center;
-  margin-top: 20vh;
+  margin-top: 5vh;
+  align-items: center;
 }
 
 .in-out-buttons {

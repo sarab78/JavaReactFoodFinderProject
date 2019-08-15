@@ -23,7 +23,7 @@ class HomeContainer extends Component {
       return (
         <div className="home-content">
         <div className="content">
-          <h1>D-In or Out!</h1>
+          <h1>Din or Out?</h1>
         <div className="home-text">
           <p>Never know what to do for food each day? </p>
           <p>Always in two minds about wether to dine in or dine out? </p>

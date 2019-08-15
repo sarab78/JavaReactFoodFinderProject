@@ -13,7 +13,7 @@ const RecipeListItem = (props) => {
 
   return(
     <div className="recipe-list-item">
-      <img onClick={handleClick} src={props.recipe.strMealThumb} width="200" height="80"></img>
+      <img onClick={handleClick} src={props.recipe.strMealThumb}></img>
       <p onClick={handleClick}>{props.recipe.strMeal}</p>
     </div>
 )
