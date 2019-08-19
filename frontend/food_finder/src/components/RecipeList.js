@@ -9,6 +9,11 @@ const RecipeList = (props) => {
   return "Loading..."
 }
 
+function random() {
+  props.findRandomRecipe()
+  console.log('random1');
+}
+
 
 function showButton() {
    if(!props.selectedRecipe) return null;
@@ -31,14 +36,13 @@ const recipies = props.recipiesList.map((recipe, index) => {
   return(
     <div className="recipe-list-container">
     <div className="recipe-list">
-    <ul>
-    {recipies}
+    <ul className="recipe-button">
+      {recipies}
+      <button  button onClick={random}>Random Recipe</button>
     </ul>
     </div>
     <div className="recipe-button">
     {showButton()}
-
-
     </div>
     </div>
 )

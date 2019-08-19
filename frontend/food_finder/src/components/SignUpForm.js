@@ -8,7 +8,7 @@ const SignUpForm = (props) => {
         // console.log(event.target.cuisine.value);
     let cuisineChoice = props.cuisineTypes.slice(event.target.cuisine.value, event.target.cuisine.value + 1)
     // cuisineChoice = cusine {id: 1, name: 'Chinese', cuisine_id: 1}
-    console.log(cuisineChoice);
+    // console.log(cuisineChoice);
     let ingredientChoice = props.ingredients.slice(event.target.ingredient.value, event.target.ingredient.value + 1)
     // ingredientChoice = ingredientChoice[0].keys.slice(0, 1)
 

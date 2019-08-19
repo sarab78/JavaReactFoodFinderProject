@@ -34,6 +34,7 @@ class MainContainer extends Component {
       this.addToRecipeFav = this.addToRecipeFav.bind(this);
       this.addToRestaurantFav = this.addToRestaurantFav.bind(this);
       this.updateProfileUser = this.updateProfileUser.bind(this);
+      this.findRandomRecipe = this.findRandomRecipe.bind(this);
     }
 
 //Log in details from Home page
@@ -84,6 +85,14 @@ class MainContainer extends Component {
       // .then(window.location = '/in/recipe')
       .catch(err => console.log(err));
 
+    }
+
+    findRandomRecipe(){
+      const url = new Urls
+      fetch(url.getRecipeRandom())
+      .then(res => res.json())
+      .then(recipies => this.setState({selectedRecipe: recipies.meals[0]}))
+      .catch(err => console.log(err));
     }
 
 
@@ -158,7 +167,7 @@ class MainContainer extends Component {
             />
 
             <Route  exact path="/in"
-            render={() => <InContainer user={this.state.user} recipiesList={this.state.recipiesList} findSelectedRecipe={this.findSelectedRecipe} selectedRecipe={this.state.selectedRecipe}/>}
+            render={() => <InContainer user={this.state.user} recipiesList={this.state.recipiesList} findSelectedRecipe={this.findSelectedRecipe} selectedRecipe={this.state.selectedRecipe} findRandomRecipe={this.findRandomRecipe}/>}
             />
             <Route exact path="/in/recipe"
             render={() => <InRecipeContainer user={this.state.user} addToRecipeFavMain={this.addToRecipeFav} selectedRecipe={this.state.selectedRecipe}/>}

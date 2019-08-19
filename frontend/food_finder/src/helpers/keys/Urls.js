@@ -29,6 +29,10 @@ class Urls{
       return 'https://developers.zomato.com/api/v2.1/restaurant?apikey=57d965e80aa4daf08b992fdc63f2c7bc&res_id=' + id
     }
 
+    getRecipeRandom(){
+      return 'https://www.themealdb.com/api/json/v1/1/random.php'
+    }
+
 }
 
 
