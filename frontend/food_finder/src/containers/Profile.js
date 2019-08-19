@@ -56,15 +56,16 @@ class Profile extends Component {
       let favouriteRestaurants = [];
       if (!this.props.user.restaurantId) {
         return null } else {
-      {for (let l_restaurant of restaurantAPI){
+      for (let l_restaurant of restaurantAPI){
          fetch(url.urlRestaurantById(l_restaurant))
         .then(res => res.json())
         .then(restaurant => (favouriteRestaurants.push(restaurant)))
-          .then(result => console.log(result))
+          // .then(result => console.log(result))
         .catch(err => console.log(err));
       }
-        (this.setState({restaurantFav: favouriteRestaurants}));}
+        (this.setState({restaurantFav: favouriteRestaurants}))
       }
+
   }
 
   updateUserMain(updatedUser) {
@@ -87,7 +88,7 @@ class Profile extends Component {
             <FavRecipies user={this.props.user} recipesFav={this.state.recipesFav}/>
             </div>
             <div>
-            <FavRestaurants user={this.props.user} restaurantsFav={this.state.restaurantsFav}/>
+            <FavRestaurants user={this.props.user} restaurantFav={this.state.restaurantFav}/>
             </div>
           </div>
       </div>
